@@ -1,0 +1,80 @@
+body {
+	margin:0;
+	padding:0;
+	font-family: "lato", sans-serif;
+	font-size: 6px;
+	line-height: 9px;
+	color:#000000;
+	/*border: solid 1px red*/
+}
+#printable-area {
+	width: 100%; margin: 0; padding: 0; float: none;
+	font-size: 7px; 
+}
+h4 { font-size: 14px }
+h5 { font-size: 12px; }
+#printable-area p, h1, h2, h3, p, table {
+	font-size: 7px; 
+}
+.panel { margin-bottom: 4px; }
+.palette { padding:4px }
+
+#limited-view {
+	max-height: none; overflow:hidden;
+}
+table, tbody, tr, td {
+	padding: 0px;
+}
+.table .table-unbordered > tbody > tr > th { border: none; }
+.table-bordered > tbody > tr > th {border: 2px solid #000; }
+.table80 { width:80%; margin: 0 auto;}
+.table60 { width:60%; margin: 0 auto;}
+.thickborder { border: 2px solid #000; }
+.thickborder strong { font-size: 14px;}
+/* Remove unwanted elements */
+#header, #nav, .noprint, .modal-header, .btn-group
+{
+display: none;
+}
+
+/* Ensure the content spans the full width */
+#container, #container2, #content
+{
+width: 100%; margin: 0; float: none;
+}
+
+/* Improve colour contrast of links */
+a:link, a:visited
+{
+color: #000000
+}
+
+
+/* Egresos */
+.format_texts { display: inline; }
+.area_firma { height: 50px; }
+.area_firma div { margin:40px 0 0 0 }
+.egreso_numero {
+	margin:200px 0 0 0;
+	background: red;
+	height: 30px;	
+	text-align: center;
+}
+
+.table-factura { font-size:9px; line-height:12px }
+
+#printable-area .table-bordered td, #printable-area .table-bordered th,  .table-bordered td, .table-bordered th { border: 2px solid #000000; }
+
+@media print {
+body{
+
+color: #000000 !important;
+}
+.modal-body{
+	color: #000000 !important;
+}
+a:link, a:visited
+{
+color: #000000;
+}
+}
