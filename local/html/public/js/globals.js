@@ -5,6 +5,6 @@ define(['module'], function(module){
 		isProcessing: false, //To Avoid multiple AJAX requests
 		URL: "http://localhost/Quinbi/local/html/",
 		urlCheck: '/html/',
-		position: 2
+		position: 4
     }
 });

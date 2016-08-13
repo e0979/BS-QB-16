@@ -656,20 +656,7 @@ $(document).ready(function(e) {
 	/* PERSISTENTS */
 	
 	/* Agenda */
-	$('#search_id').select2({ maximumSelectionSize: 1, width: '100%' });
 	
-	$('#agenda-cliente #search_id').change(function(){		var id = $(this).select2('val').toString();	loadFichaAgenda('cliente', id);    });	
-	$('#agenda-proveedor #search_id').change(function(){	var id = $(this).select2('val').toString();	loadFichaAgenda('proveedor', id);  });
-	
-	function loadFichaAgenda(element, id){
-	
-	//$('#someModal').get(anUrl, someData, function() { $('#indicator').hide(); });
-		$('#indicator').show();
-		$.post(URL+"entidades/agenda/"+element+"/"+ id, function(data){
-			$('#indicator').hide();
-			$('#agenda-'+element +' #ficha').hide().html(data).fadeIn('slow');
-		});
-	}
 	
 	/* ADD proveedor */
 	$('#add-proveedor form').validate({				
@@ -781,14 +768,7 @@ function formEnhancement() {
 	});
 }
 		    
-function getPage(position){
-	
-		var pathArray = window.location.pathname.split( '/' );
-		var accessToArray = pathArray[position];
-		console.log("Access:" + accessToArray)
-		return accessToArray;
-	
-}
+
 function showModal(modalid){
 	
 	$('#'+modalid).modal('show');

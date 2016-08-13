@@ -8,16 +8,42 @@ define(function() {
 		var url = $.param.fragment();
 		// Hide any visible ajax content.
 		$('#mainarea').children(':visible').hide();
-		$('#mainarea').children('.nohide').show();
-		
+		//$('#mainarea').children('.nohide').show();
 		if (cache[url]) {
-			cache[url].show();	$('.preloader').fadeOut();			
+			cache[url].show();	
+			$('.preloader').fadeOut();			
 		} else {
 			$('.preloader').show();			
-			//show preloader per request -- This is not related to first login preloader
 			
 			var active_page = url.split('/');
-			switch(active_page[0]) {
+			console.log(active_page[0] + " ACTIVE_page");
+			console.log(url);
+			//Version 1
+			cache[url] = $('<div class="view"/>').appendTo('#mainarea').load('../'+url, function() {
+				switch(active_page[0]) {
+					/*case "doctor":
+						$('<div class="view"/>').appendTo('#mainarea').load(URL+url, function(){
+							require(['app/doctor'], function(Doctor) {
+								switch(active_page[1]) {
+									case 'profile':
+									Doctor.profile();
+									break;
+								}
+							}); 											
+						});
+						break;
+					*/
+					default:
+						var controler = active_page[0];
+						require(['app/'+controler], function(controler) {
+							controler.run();
+						});
+						break;
+				}
+			});
+
+			//Version 2
+			/*switch(active_page[0]) {
 					case "search":
 					require(['app/search'], function(Search) {							
 						Search.searchDoctor();
@@ -35,12 +61,12 @@ define(function() {
 					});
 					break;
 				default:
-					$('<div class="view"/>').appendTo('#mainarea').load(URL+url, function(){
-
+					var controler = active_page[0];
+					require(['app/'+controler], function(controler) {
+						controler.run();
 					});
-					console.log("is me");
 					break;
-			}
+			}*/
 			$('.preloader').fadeOut();		
 			
 			

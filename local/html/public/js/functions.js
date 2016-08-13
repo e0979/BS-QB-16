@@ -4,7 +4,7 @@ define(['globals','assets/handlebars.min',], function(globals, Handlebars) {
 		
 		var pathArray = window.location.pathname.split( '/' );
 		var accessToArray = pathArray[position];
-		console.log("Access:" + accessToArray);
+		console.log("Access:" + accessToArray+" ("+position+")");
 		return accessToArray;
 		
 	}

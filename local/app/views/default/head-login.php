@@ -30,9 +30,5 @@
     <script data-main="<?php echo JS;?>main-site" src="<?php echo JS; ?>assets/require.js"></script>
 	
 </head>
-<body id="<?php echo "page-".getPage(); ?>" class="page-dashboard">
-	<?php $this->render('default/nav'); ?>
-	<?php $this->render('entidades/cliente/agenda-modal'); ?>
-	<?php $this->render('entidades/proveedor/agenda-modal'); ?>
-	<div class="container-fluid dashboard-area">
-		<div id="mainarea">
+<body id="page-login">
+	<div class="container-fluid">

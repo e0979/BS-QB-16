@@ -6,7 +6,7 @@
 	date_default_timezone_set('America/Caracas');	
 	//Path info
 	define ('SITE_PATH', dirname(dirname(realpath(__FILE__))).'/'); 
-	define ('SITE_NAME', "OKIDOC");
+	define ('SITE_NAME', "QUINBI");
 	define ('PUBLIC_PATH', URL . 'public/');
 	define ('CSS', URL . 'public/css/'); 
 	define ('IMG', URL . 'public/img/'); 

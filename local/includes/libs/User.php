@@ -94,13 +94,13 @@
 		
 		public function getUserdata(){
 			
-			$user = $this->get('username');
+			$user = $this->get('rif');
 			
 			if (!empty($user)) {
-				$role = $this->get('role');
+				//$role = $this->get('role');
 			
-				$table = $role; //'user_profile';
-				$field = 'username';
+				$table = 'user_profile';
+				$field = 'rif';
 									
 				return DB::query("SELECT * FROM ". DB_PREFIX . $table ." WHERE ". $field ."=%s LIMIT 1", $user);
 			}
@@ -287,11 +287,15 @@
 		}
 		
 		
- 		public static function gotoMainArea() {
+ 		public static function gotoMainArea($print = FALSE) {
 			$role = User::get('role');
 			$permisos =	DB::query("SELECT * FROM " . DB_PREFIX . "users_role_permissions WHERE role=%s", $role);
 
-			header('location: '.URL.$permisos[0]['area']);
+ 			if ($print === TRUE) {
+ 				return URL.$permisos[0]['area'];
+ 			} else {
+				header('location: '.URL.$permisos[0]['area']);
+			}
 		}
 		
 		

@@ -13,7 +13,7 @@ body {
 }
 * { margin: 0; padding: 0; }
 
-/* Login */
+/* Login *******************************************************************/
 
 body#page-login {
  
@@ -25,8 +25,9 @@ body#page-login {
   background: radial-gradient(ellipse at center,   rgba(0,0,0,0) 40%,rgba(0,0,0,0.6) 100%), url(../../public/img/bg.jpg);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#806d3600',GradientType=1 ); 
 }
-/* login screen */
-.form-signin {max-width: 380px; padding: 15px; margin: 0 auto; }
+/* Login screen *******************************************************************/
+
+.form-signin {max-width: 380px; padding: 15px; margin: 30vh auto; }
 .form-signin .form-signin-heading img {max-width:50% }
 .form-signin .form-control {position: relative; font-size: 16px; height: auto; padding: 10px 10px 10px 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .form-signin .form-control:focus {z-index: 2;}
@@ -36,7 +37,7 @@ body#page-login {
 .form-signin .user { background: url("../img/icons/sprites.png") 0 -110px no-repeat #FFF; }
 .form-signin .password { background: url("../img/icons/sprites.png") 0 -150px no-repeat #FFF; }
 .form-signin input[type="text"] {
-    margin-bottom: -4px;
+    margin-bottom: 2px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-style: solid;
@@ -72,12 +73,30 @@ body#page-login {
 .add-header h4 { margin: 0 }
 .add-header { position: relative; background: #1abc9c; background-size: 16px 16px; border-radius: 6px 6px 0 0; color: #34495e; padding: 19px 25px 20px; }
 
-/* Home */
+label.valid {
+  width: 24px;
+  height: 24px;
+  background: url(../../public/img/valid.png) center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+  transition:all ease 1s;
+}
+label.error {
+  color: #FFF;
+  padding:0.4em;
+  transition:all ease 1s;
+  font-size: 0.9em;
+  background: #E74C3C;
+  border-radius: 0.5em 0.5em 0.5em 0;
+  box-shadow: 0 0.1em 0.2em rgba(0,0,0,0.5)
+}
 
-body#page-home {
-  margin: 0px; padding: 100px 0 0 0; position:relative; 
+/* Home *******************************************************************/
+
+body.page-dashboard {
+  margin: 0px; position:relative; 
   color: #666;
-  min-height:600px;
+  min-height:100vh;
   height: 100%;
   padding-bottom: 20px;
   
@@ -94,3 +113,97 @@ body#page-home {
 
 }
 
+.page-dashboard .dashboard-area { 
+  /*padding-top: 10vh;
+  min-height: 50vh;
+  margin-top: 25vh;*/
+  margin: 10vh 0;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Top Menu *******************************************************************/
+.topmenu {
+  /* position:absolute; top:0; background:#1D1D1D; width: 100%; */
+  box-shadow: 0 2px 10px rgba(0,0,0, 0.5);  
+  /*padding:0.9em;*/
+  color:#CCC;
+  font-weight:200;
+  font-size:0.8em
+}
+.topmenu img { height:2em; width:auto}
+.topmenu a, .topmenu a:link { color:#BDC3C7; }
+.topmenu a:hover { color:#F1C40F }
+
+/* Agenda  *******************************************************************/
+
+.agenda .card { font: 16px 'AmericanTypewriter', Cambria, Georgia; margin: 26px auto; width:95%; text-align: left; }
+.agenda .card h3 { margin: 0 0 10px 0; }
+.agenda .card p { border: none; line-height: 1em; text-align:left}
+
+.modal.agenda .modal-content {
+background: url(../../public/img/agendabg.jpg);
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;  
+  padding: 20px;
+}
+.modal.agenda .modal-header {
+  background: none;
+  border-radius: 6px 6px 0 0;
+  padding: 19px 25px 20px;
+  border: 1px dashed rgba(15, 18, 12, 1);
+  border-bottom: none;
+  
+   color: rgba(0, 0, 0, 0.53);
+  font-size: 2em;
+  font-weight: 700;
+  outline: 1px dashed rgba(171, 128, 112, 0.7);
+  text-shadow: 0 1px 3px rgba(171, 128, 112, 0.5) , 0 -2px 4px rgba(5, 8, 2, 0.5);
+}
+.modal.agenda .modal-body {
+  
+  padding: 24px 55px 27px;
+  margin-bottom: 20px;
+  min-height:300px;
+position: relative;
+background: white;
+background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+-webkit-background-size: 100% 30px;
+-moz-background-size: 100% 30px;
+-ms-background-size: 100% 30px;
+background-size: 100% 30px;
+
+  -webkit-box-shadow: 0 5px 10px #000 , -15px 15px 15px rgba(0, 0, 0, 0.3) , 0 0 50px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 5px 10px #000 , -15px 15px 15px rgba(0, 0, 0, 0.3) , 0 0 50px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px #000 , -15px 15px 15px rgba(0, 0, 0, 0.3) , 0 0 50px 10px rgba(0, 0, 0, 0.5);
+}
+/*
+.agenda .modal-body::before { content:""; z-index:-1; margin:0 1px; width:706px; height:10px; position:absolute; bottom:-3px; left:0; background:white; border:1px solid #B5B5B5;}
+.agenda .modal-body::after { content:''; position:absolute; width:0px; top:0; left:39px; bottom:0; border-left:1px solid #F8D3D3;}
+*/
+.head { width: 100%; height: 5em; background: #CCC; border-radius: 1em; padding: 1.5em 0.5em 0; text-align: left; border-bottom-right-radius:0; border-bottom-left-radius:0  }
+.modalhead { width: 100%; height: 5em; background: #CCC; border-radius: 0.4em 0.4em 0 0; padding: 1.5em 0.5em 0;  }
+
+/* General BLOQUES  *******************************************************************/
+
+.seccion h1 { font-weight:100; font-size:5em; margin:-0.6em auto 1em auto; color: #EEE; text-shadow: 0 -0.015em 0.02em rgba(0,0,0,0.6); 
+}
+.seccion h2 { font-size: 2em; padding:0.5em; color:#FFF; text-shadow: 0 0.4em 0.2em rgba(0,0,0,0.2)  }
+.seccion h3 { font-weight:100; font-size: 2em; padding:0 0.5em 0.2em; margin-top: 0 }
+
+/* TABLAS  *******************************************************************/
+
+.head-egresos       { background: #E74C3C; color: #FFF; }
+.head-facturas      { background: #2ECC71; color: #FFF; }
+.head-impuestos     { background: #D35400; color: #FFF; }
+.head-dominios      { background: #1ABC9C; color: #FFF; }
+.head-presupuestos  { background: #2980B9; color: #FFF; }
+
+.box { background:#FFF; border-radius:0.5em; border-top-right-radius:0; 
+  border-top-left-radius:0; height:auto; padding:2em; }

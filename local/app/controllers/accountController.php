@@ -30,7 +30,7 @@
 				eval($data);
 			}
 			
-			$username = $email;
+			$username = $username;
 			$validUser = $this->user->validateUsername($username);
 			
 			if(empty($validUser)){						
@@ -63,6 +63,7 @@
 			        $this->user->set('role', $role);
 					$this->user->set('loggedIn', true);
 			        $this->user->set('username', $username);
+			        $this->user->set('rif', $validUser[0]['rif']);
 					
 					//Check session in here
 					User::checkSession();
@@ -87,6 +88,7 @@
 				
 		}
 	}
+
 	/*class accountController extends Controller {
 		
 		
@@ -194,10 +196,10 @@
 					break;
 					
 				//TODO Change if need to check by other field
-				/*case 'rif':
-					$requested_data = escape_value($_POST['rifletter']).escape_value($_POST['rif']);
-					$already_registered =	$this->model->getAccount($requested_data, 'rif'); 
-					break;*/
+				//case 'rif':
+					//$requested_data = escape_value($_POST['rifletter']).escape_value($_POST['rif']);
+					//$already_registered =	$this->model->getAccount($requested_data, 'rif'); 
+					//break;
 			}
 			
 			if (empty($already_registered)) {

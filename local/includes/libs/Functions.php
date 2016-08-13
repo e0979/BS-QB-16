@@ -33,7 +33,7 @@
 		 }
 	}
 	
-	function  integer($value){
+	function integer($value){
 		if (required($value)){
 			return	$valid=is_int(intval($value) );
 		}else{
@@ -50,7 +50,7 @@
 	function getPage() {
 		$current = explode("/",$_SERVER['REQUEST_URI']);
 		if (end($current) == "") {
-			return "login";
+			return "dashboard";
 		} else {
 			return end($current);	
 		}
@@ -94,6 +94,39 @@
 			$times[(string) $increment] = $date->format( $format );
 		}
 		return $times;
+	}
+
+	/* Quinbi */
+	function shortName($data) {
+		$data = explode( ' ', $data );
+		return $data[0];
+	}
+
+	function shortdate($data) {
+		//turns data that comes dd/mm/yyyy	 to dd/mm/yy
+		$year = substr($data, -2);
+		$rest =	substr($data, 0, 6);
+		$data =	$rest . $year;
+		return $data;	
+	}
+
+	function shortyear($data) {
+		//turns data that comes dd/mm/yyyy	 to dd/mm/yy
+		//$data = substr($data, -2);
+		$data =	substr($data, -2);
+		//$data =	$rest . $year;
+		return $data;		
+	}
+
+	function makeTitle($data = "") {
+		$data = escape_value($data);
+		if ($data == "") {
+			$conector = "";
+		} else {
+			$conector = " | ";
+		}
+		$data = SITE_NAME.$conector.$data;
+		return $data;
 	}
 
 	

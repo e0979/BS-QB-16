@@ -17,7 +17,7 @@
 			
 			$this->view->titulo = SITE_NAME. ' | login ';		
 
-			$this->view->render('default/head');			
+			$this->view->render('default/head-login');			
 			$this->view->render('login');			
 			$this->view->render('default/footer');
 
