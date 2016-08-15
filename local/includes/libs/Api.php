@@ -50,10 +50,7 @@ class Api extends ApiQuery {
 			$what = "data"; 
 		} 
 		foreach ($array_entity as $Entity) {
-			foreach ($profileFields as $field) {
-				$array_final[$what][$i][$field] = $Entity[$field];
-				
-			}
+			$array_final[$what][$i] = $Entity;
 			$i++;
 		}
 

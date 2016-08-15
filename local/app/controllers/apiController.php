@@ -19,8 +19,7 @@
 			$this -> api -> search($type, $terms, $location);
 		}*/
 
-		public function get($print="json", $what, $param, $id, $data = "false") {
-
+		public function get($print = "json", $what, $param, $id, $data = "false") {
 			//For Get All, leave $param and $id empty
 			$this->api->get($print, $what, $param, $id, $data);
 		}

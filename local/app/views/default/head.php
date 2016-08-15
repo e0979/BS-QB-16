@@ -21,8 +21,6 @@
 
 	<link href="<?php echo CSS; ?>bootstrap-editable.css" rel="stylesheet">
 
-
-	
 	<?php echo GOOGLE_FONTS; ?>
 	<?php echo GOOGLE_ANALYTICS; ?>
 

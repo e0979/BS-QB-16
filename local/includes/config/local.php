@@ -1,6 +1,6 @@
 <?php
 		//Path Info
-		define ('URL', "http://localhost/Quinbi/local/html/"); 
+		define ('URL', "http://localhost:8888/Quinbi/local/html/"); 
 
 		//Server Info
 		define ( 'DB_SERVER', 'localhost');
@@ -13,7 +13,8 @@
 
 		//Resources
 		define ( 'JQUERY_LINK', URL .'public/js/jquery.min.js');
-		define ( 'GOOGLE_FONTS', "<link href='".URL."public/css/localfonts.css' type='text/css'>" );
+		//define ( 'GOOGLE_FONTS', "<link href='".URL."public/css/localfonts.css' type='text/css'>" );
+		define ('GOOGLE_FONTS', "<link href='//fonts.googleapis.com/css?family=Lato:400,700,100,300,900' rel='stylesheet' type='text/css'>");
 		define ( 'GOOGLE_ANALYTICS', "");
 		//Session
 		define ('SESSION_LIMIT', '300000');

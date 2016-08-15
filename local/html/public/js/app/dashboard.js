@@ -6,12 +6,24 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 		loadAgendas('cliente');
 		loadAgendas('proveedor');	
 	}
+	
+	function getAgendaTemplates(elementIs){
+		switch (elementIs) {
+			case "cliente": 
+				var template_id = '#client-Search-Template';
+				var partial_id 	= '#client-Card-Template'; break;
+			case "proveedor": 
+				var template_id = '#proveedor-Search-Template';
+				var partial_id 	= '#proveedor-Card-Template'; break;
+		}
+		return [template_id, partial_id];
+	}
 
 	function loadAgendas(elementIs) {
 		
 		var elementTemplate = getAgendaTemplates(elementIs);
 		$.when(
-			$.getJSON(URL+"api/get/json/"+elementIs, function(data) {
+			$.getJSON(globals.URL+"api/get/json/"+elementIs, function(data) {
 				var TemplateScript = $(elementTemplate[0]).html(); 
 		        var Template = Handlebars.compile(TemplateScript);
 		        Handlebars.registerPartial("cardPartial", $(elementTemplate[1]).html());
@@ -33,7 +45,7 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 
 		$.when(
 			//$('#indicator').show();
-			$.getJSON(URL+"api/get/json/"+elementIs+"/id/"+id, function(data) {
+			$.getJSON(globals.URL+"api/get/json/"+elementIs+"/id/"+id, function(data) {
 				var NewCard = $(elementTemplate[1]).html();
 				var Template = Handlebars.compile(NewCard);
 				$("#agenda-"+elementIs+" .modal-body .card").html(Template(data)); 
@@ -45,20 +57,25 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 		});
 	}	
 
-	function getAgendaTemplates(elementIs){
-		switch (elementIs) {
-			case "cliente": 
-				var template_id = '#client-Search-Template';
-				var partial_id 	= '#client-Card-Template'; break;
-			case "proveedor": 
-				var template_id = '#proveedor-Search-Template';
-				var partial_id 	= '#proveedor-Card-Template'; break;
-		}
-		return [template_id, partial_id];
+	function loadDataSelect(elementIs){
+
+		var elementTemplate = "#"+elementIs+"-Select-Template";
+
+		$.when(
+			$.getJSON(globals.URL+"api/get/json/"+elementIs, function(data) {
+				var TemplateScript = $(elementTemplate).html(); 
+			    var Template = Handlebars.compile(TemplateScript);
+		    $("select#razon_social-select").html(Template(data)); 
+		}, function () {
+		    
+		})).done( function(){
+			//$("#egreso-view").modal('show');
+		});
 	}
 
 	return {
       run: run,
+      loadDataSelect: loadDataSelect,
 	}
 
 });

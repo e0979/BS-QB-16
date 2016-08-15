@@ -795,28 +795,7 @@ function createfrom(what, from, id) {
 			
 	});
 }
-function view(what,id){
-	
-	switch (what) {
-		case 'iva':				var controller = 'impuestos'; 		var element = 'planilla';		break;			
-		case 'compras':			var controller = 'impuestos';		var element = 'compra';			break;
-		case 'retenciones':		var controller = 'impuestos';		var element = 'retencion';		break;
-		case 'comprobantes':	var controller = 'egresos';			var element = 'comprobante';	break;
-		case 'nominas':			var controller = 'egresos';			var element = 'nomina';			break;
-		case 'nominarecibo':	var controller = 'egresos';			var element = 'nominarecibo';	break;
-		case 'facturas':		var controller = 'cobros';			var element = 'factura';		break;
-		
-	}
-	
-	$.post(URL+controller+"/"+what+"/load/"+element+"/"+id, function(data){
-		console.log (what+id+controller);	
-		$('#ver-'+element+' .modal-body').hide().html(data).fadeIn('slow');
-		showModal('ver-'+element);
-		$('.soloenedit').addClass('hide');
-	});
-		
-	return false;	
-}
+
 
 
 function edit(what,id){

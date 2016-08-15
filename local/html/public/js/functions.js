@@ -59,6 +59,7 @@ define(['globals','assets/handlebars.min',], function(globals, Handlebars) {
 	function roundNumber(num) {
 		return (num.toString().indexOf(".") !== -1) ? num.toFixed(2) : num;
 	}
+	
 	function showModal(modalid){		
 		//$(modalid).last().modal('show');		
 		switch(modalid[0]) {

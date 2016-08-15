@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: "http://localhost/Quinbi/local/html/public/js",
+  baseUrl: "http://localhost:8888/Quinbi/local/html/public/js",
   requireDefine: true,
   waitSeconds:0,
   paths: {

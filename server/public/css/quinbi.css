@@ -30,7 +30,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   line-height: 1.231;*/
   
 }
-#printable-area .table-bordered td, #printable-area .table-bordered th { border: 2px solid #000; }
+
 .badge-warning { background-color: #EFE24B; color:#999 }
 .home-login {
 	
@@ -796,10 +796,7 @@ textarea,
 
 
 .format_texts { display:none; }
-#addegreso-proveedor .select2-container .select2-choice {
 
-margin-top: 0.2em;
-}
 
 .table-small-font { font-size:9px; }
 .close {
