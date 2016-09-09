@@ -79,4 +79,3 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 	}
 
 });
-

@@ -1,4 +1,4 @@
-define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTables.min', 'app/tables', 'app/dashboard'], function(globals, Functions, Handlebars, DataTable, Tables, Dashboard) {
+define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTables.min', 'app/tables', 'app/dashboard', 'app/forms'], function(globals, Functions, Handlebars, DataTable, Tables, Dashboard, Forms) {
 	
 	function run() {
 		loadTableData('comprobantes');
@@ -7,6 +7,7 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 
 		$('#add-egreso').on('shown.bs.modal', function (e) {
 		  Dashboard.loadDataSelect('proveedor');
+		  Forms.enhance('egresos'); //TODO enhance aca? o hacer que automaticamente se haga con los modal?
 		});
 
 	}

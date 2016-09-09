@@ -332,11 +332,7 @@ $(document).ready(function(e) {
 			
 			formEnhancement(); 
 			
-			$("#forma_pago").select2( { 
-				placeholder: 'Forma de Pago...',
-				minimumResultsForSearch: -1,
-				width: '55%',
-			});
+			
 		    
 		    $('.comprobantes').dataTable( {
 					"aaSorting": [[ 0, "desc" ]],

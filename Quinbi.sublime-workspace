@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"en",
+				"enhance"
+			],
+			[
+				"el",
+				"elementTemplate"
+			],
+			[
+				"ele",
+				"elementIs"
+			],
+			[
+				"elem",
+				"elementTemplate"
+			],
+			[
+				"loa",
+				"loadDataSelect"
+			],
+			[
+				"lo",
+				"loadDataSelect"
+			],
+			[
+				"GOO",
+				"GOOGLE_FONTS"
+			],
+			[
+				"text",
+				"text-left"
+			],
+			[
+				"butto",
+				"buttonCreate"
+			],
+			[
+				"prove",
+				"proveedor_id"
+			],
+			[
 				"ar",
 				"array_data"
 			],
@@ -14,10 +54,6 @@
 			[
 				"margin",
 				"margin-right"
-			],
-			[
-				"lo",
-				"loadWorkArea"
 			],
 			[
 				"min",
@@ -105,10 +141,6 @@
 			],
 			[
 				"tex",
-				"text-decoration"
-			],
-			[
-				"text",
 				"text-decoration"
 			],
 			[
@@ -482,43 +514,92 @@
 			[
 				"else",
 				"elseif	elseif …"
-			],
-			[
-				"prac",
-				"practice-sheet"
-			],
-			[
-				"pra",
-				"practice-sheet"
-			],
-			[
-				"add",
-				"address_url"
-			],
-			[
-				"tem",
-				"tempdata"
-			],
-			[
-				"addre",
-				"address_location"
-			],
-			[
-				"cli",
-				"clinic_id"
-			],
-			[
-				"backgr",
-				"background"
-			],
-			[
-				"is_a",
-				"is_array"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "local/html/public/js/app/egresos.js",
+			"settings":
+			{
+				"buffer_size": 7046,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "local/html/public/js/app/forms.js",
+			"settings":
+			{
+				"buffer_size": 1159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "local/app/views/entidades/proveedor/select.php",
+			"settings":
+			{
+				"buffer_size": 1166,
+				"line_ending": "Unix",
+				"name": "select.php"
+			}
+		},
+		{
+			"file": "local/app/views/egresos/add.php",
+			"settings":
+			{
+				"buffer_size": 2840,
+				"line_ending": "Unix",
+				"name": "add.php"
+			}
+		},
+		{
+			"file": "server/app/controllers/egresosController.php",
+			"settings":
+			{
+				"buffer_size": 18073,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php \n\nif (!empty($this->nextp)) {\n		\n	$next= \"<button class='btn btn-default' onclick=view('\".$this->whatnext.\"',\".$this->nextp[0]['id'].\");><i class='glyphicon glyphicon-chevron-left'></i></button>\";\n}\nif (!empty($this->prevp)) {\n		\n	$prev= \"<button class='btn btn-default' onclick=view('\".$this->whatnext.\"',\".$this->prevp[0]['id'].\");><i class='glyphicon glyphicon-chevron-right'></i></button>\";\n}\n		\n		?>\n<div class=\"grid_3 text-right right\">\n	<div class=\"btn-group btn-group-sm\">\n		<?php echo @$next; \n			  echo @$prev; ?>\n		<button class=\"btn btn-default soloenview\" onclick=\"edit('<?php echo $this->whatnext . \"', '\". $this->curent .\"'\"; ?>);\"><i class='glyphicon glyphicon-pencil'></i></button>\n	</div>\n</div>",
+			"file": "local/app/views/default/modal/nextprev.php",
+			"file_size": 8,
+			"file_write_time": 131156652110000000,
+			"settings":
+			{
+				"buffer_size": 719,
+				"line_ending": "Unix",
+				"name": "nextprev"
+			}
+		},
+		{
+			"file": "local/html/public/css/styles.css",
+			"settings":
+			{
+				"buffer_size": 9053,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/public/css/quinbi.css",
+			"settings":
+			{
+				"buffer_size": 23643,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "$(document).ready(function(e) {\n	\n	$.fn.editable.defaults.mode = 'inline';\n	\n	var flag =	getPage(position);\n	var target = document.location.hash.replace(\"#\", \"\"); // For links in Modals\n	\n	$('.money').keypress(function(evt){ \n        if(evt.which==44){\n            $(this).val($(this).val()+'.');\n            evt.preventDefault();\n        }\n    });  \n   \n    $('#print').click(function() {\n		//$('#limited-view').removeClass('limited-view');\n		$('#printable-area').printArea();\n    	return false;\n	});	\n	$('#print-inner').click(function() {\n		//$('#limited-view').removeClass('limited-view');\n		$('.area-inner').printArea(/*{ mode: 'popup', popTitle: 'Test'}*/);\n    	return false;\n	});	\n	\n	/*$('#id_cliente').on('save', function(e, params) {\n   		console.log('Saved value: ' + params.newValue);\n	});*/\n	\n	switch (target) {\n		    	\n		case 'add-retencion':\n		 		showModal(\"add-retencion\");\n		  		break;\n		    		\n		case 'add-compra':\n		  		showModal(\"add-compra\");\n		    		\n		  		break;\n		case 'iva-current':\n		  		currentPlanilla(\"iva\");\n		   		break;\n		case 'add-dominio':\n		 		showModal(\"add-dominio\")\n		  		break;\n		case 'add-egreso-proveedor':\n		    	showModal(\"egreso-proveedor\")\n		   		break;\n		case 'add-egreso-nomina':\n		    	showModal(\"add-egreso-nomina\")\n		   		break;	\n		case 'add-factura':\n		  		showModal(\"add-factura\");\n		   		break;  	\n		   		\n	}\n	\n	switch(flag) {\n		\n		\n		\n		case 'impuestos':\n		\n			\n		   \n		    $('#ver-planilla, #add-planilla').on('hidden.bs.modal', function (e) {\n				var element = $(this).data('element');\n				updatelist(element);\n			});	\n			\n			\n			\n		\n		    \n		    formEnhancement();\n			\n			/* Form */	\n			\n			initList('2,3,4');\n			\n			compras_check();\n			\n			//ADD Compra\n			\n			$('#addcompra').validate({				\n				rules: {\n				   rif:{\n	                	\"rif\": true,\n		                remote: {\n	                    	url: urlCheck+'entidades/check/proveedor',\n	                    	type: 'post',\n	                    }\n	               },\n	               factura:{\n	               		required: true,\n	                	remote: {\n	                    	url: urlCheck+'impuestos/check/compras',\n	                    	type: 'post',\n	                    }\n	               },\n				   base_imponible: \"bsformat\",\n				   alicuota: \"number\",					   \n				},\n				messages: {\n	                rif: {\n	                    remote:jQuery.format(\"\\\"{0}\\\" ya está registrado, revise la lista\")\n	                },\n	                factura: {\n	                    remote:jQuery.format(\"Parece que esta factura ya fue registrada\")\n	                }\n	            },				\n				submitHandler: function(form) {\n					$.ajax({\n					  type: \"POST\",\n					  url: \"add/compras\",\n					  data: $(form).serialize(),\n					  timeout: 5000,\n					  success: function(response) {\n					  	console.log('works'+response);\n						 	$('#addcompra').closest('form').find(\"input, textarea\").val(\"\");\n							$('#addcompra').closest('form').find(\"select\").select2('data', null);\n							\n							\n						 	$('#addcompra').modal('hide');\n						   						   \n						   $('#confirm').bPopup({ modal: false });										   	\n					  },\n					  error: function(response) {\n						  console.log(response);\n						  $('#add-domain').animate({opacity: 0, left: \"-=300\", }, 800);\n						  $('#failed').bPopup({ modal: false });\n					  }\n					});\n					return false;\n				}\n			});\n			\n			\n			\n			\n			break;\n			\n		case 'dominios':\n			\n			\n			initDomain();\n			initEdit();\n			$('#redireccion').hide();	\n						\n			$(\".chosen-select\").select2( { placeholder: 'Seleccione...', width: '100%' });			\n			$('.datepicker').datepicker({});\n			\n			$('#list-results').dataTable( {\n				\"aaSorting\": [[ 0, \"asc\" ]],\n				\"sDom\": \"<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>\",\n				\"sPaginationType\": \"bootstrap\",\n			    \"iDisplayLength\": 5,\n				\"oLanguage\": {\n					\"sLengthMenu\": \"_MENU_ items por pag\",\n					\"sEmptyTable\": \"No hay datos\",\n				}\n			});\n			\n			$('.closecollapse').click(function() {				\n				$('.detalles').collapse('toggle');	\n			});\n			\n			$('select[name=hosting]').change(function(e){\n			  if ($('select[name=hosting]').val() == 'redireccionado'){\n			    $('#redireccion').show();\n			  }else{\n			    $('#redireccion').hide();\n			  }\n			});	\n			\n			\n			//RENEWALS\n			//This shows the renewal financial info but still doesnt create until clear payment \n			 $('[name=\"renewal\"]').change(function(){\n					\n					var valor 	 =  $(this).val();\n			    	//If Renewal YES\n			    	if (valor === 'si') {\n			    		var group_id =	$(this).attr('id');\n			    		var id = group_id.substring(group_id.lastIndexOf(\"-\") + 1, group_id.length);	\n			    		//Open slider to show info\n			    		loadDomainDetails(id);		    		\n			    		setTimeout(function() { \n			    			$('#boton-'+id).show(); \n			    		}, 500);   				    		\n			    	}	\n			 });\n			 			 \n			\n			//RENEWALS\n			\n			//UPDATE Switches\n			$(document).on(\"change\", \".domains-form, .alert-domains, .toforgot-domains	\", function(){\n			    console.log ($(this));\n			     $.ajax({\n					type: \"POST\",\n					url: \"update\",\n					data: $(this).serialize(),\n					timeout: 5000,\n					success: function(response) {\n						console.log('works'+response);\n					},\n					error: function(response) {\n						console.log('error: '+response);\n						\n					}\n				});\n			});\n			\n			//ADD Domain\n			\n			$('#add-domain').validate({	\n				rules: {\n	                domain:{\n	                	web: true,\n		                required: true,\n	                	remote: {\n	                    	url: urlCheck+'dominios/check',\n	                    	type: 'post',\n	                    }\n	                },\n	                domain_creationdate: \"required\",\n				    hosting: \"required\",\n				    registrant: \"required\",\n				    cliente: \"required\",\n	            },\n	            messages: {\n	                domain: {\n	                    remote:jQuery.format(\"\\\"{0}\\\" ya está registrado\")\n	                }\n	            },					\n				submitHandler: function(form) {\n					$.ajax({\n					  type: \"POST\",\n					  url: \"add/domain\",\n					  data: $(form).serialize(),\n					  timeout: 5000,\n					  success: function(response) {\n						  console.log('works'+response);\n						   $('#add-domain').closest('form').find(\"input, textarea\").val(\"\");	\n						   $('#add-domain').closest('form').find(\"select\").select2('data', null);	\n						   $('#confirm').bPopup({ modal: false });\n						// Updates Domain list	   \n						   loadDomains();						   	\n					  },\n					  error: function(response) {\n						  console.log(response);\n						  $('#add-domain').animate({opacity: 0, left: \"-=300\", }, 800);\n						  $('#failed').bPopup({ modal: false });\n					  }\n					});\n					return false;\n				}\n			});\n			\n			\n			break;\n		\n		case 'presupuestos':\n			presupuestosDelegate();\n	\n			$(\".chosen-select\").select2( { placeholder: 'Seleccione...', width: '100%' });	\n			\n			$('#razon_social-select').change(function(){\n				console.log('touched');\n				$(\"[name='razon_social']\").attr('disabled', 'disabled');\n				$(\"[name='rif']\").attr('disabled', 'disabled');\n				$(\"[name='razon_comercial']\").attr('disabled', 'disabled');				\n				$(\"[name='direccion']\").attr('disabled', 'disabled');\n				$(\"[name='telefono']\").attr('disabled', 'disabled');			\n			});\n			\n			/*TODO si qty-secciones_complejas >=1 secciones_complejas required*/\n			\n			\n			//Cargar el chunck html que corresponde segun el tipo de proyecto\n			$(\"#tipo_trabajo\").change(function(){\n				var valor = $(\"#tipo_trabajo option:selected\").attr('value');\n					\n					$.post(\"load/\"+ normalize(valor), function(data){\n					$(\"#trabajo_preguntas\").html(data);\n				});\n			});\n			\n			$('.presupuestos').dataTable( {\n					\"aaSorting\": [[ 0, \"desc\" ]],\n					/*\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 1,2,3 ] }, \n				               		 { \"sClass\": \"text-right\", \"aTargets\": [ 4 ] }\n		     	   	],*/\n					\"bProcessing\": true,\n					\"bServerSide\": true,\n					\"sAjaxSource\": URL+\"presupuestos/getall\",	\n					\"aoColumnDefs\": [ \n				    {   //Buttons     	\n				      \"aTargets\": [ 6 ],\n				      \"mData\":  function (data) {\n				        return '<button class=\"btn btn-xs btn-blue\" onclick=edit(\"presupuesto_detalle\",'+data[6]+');><i class=\\'glyphicon glyphicon-pencil\\'></i> editar</button> <button class=\"btn btn-xs btn-blue\" onclick=edit(\"presupuesto_detalle\",'+data[6]+');><i class=\\'glyphicon glyphicon-pencil\\'></i> Ver</button> ';\n				      }\n				    },	 \n				    {   //Buttons     	\n				      \"aTargets\": [ 2 ],\n				      \"mData\":  function (data) {\n				        return traduce_fecha(data[2]);\n				      }\n				    },    \n	     ],									\n				});		\n				\n				$('.status').dataTable( {\n					\"aaSorting\": [[ 0, \"desc\" ]],\n					/*\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 1,2,3 ] }, \n				               		 { \"sClass\": \"text-right\", \"aTargets\": [ 4 ] }\n		     	   	],*/\n					\"bProcessing\": true,\n					\"bServerSide\": true,\n					\"sAjaxSource\": URL+\"presupuestos/get\",									\n				});			\n			break;\n		\n		case 'egresos':\n			\n		    \n		    $('#ver-planilla, #add-planilla').on('hidden.bs.modal', function (e) {\n				var element = $(this).data('element');\n				updatelist(element);\n			});	\n			\n			formEnhancement(); \n			\n			$(\"#forma_pago\").select2( { \n				placeholder: 'Forma de Pago...',\n				minimumResultsForSearch: -1,\n				width: '55%',\n			});\n		    \n		    $('.comprobantes').dataTable( {\n					\"aaSorting\": [[ 0, \"desc\" ]],\n					\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 5 ] }, \n				               		 { \"sClass\": \"text-right\", \"aTargets\": [ 3 ] },\n				               		 { \"sClass\": \"text-left\", \"aTargets\": [ 2 ] }\n		     	   	],\n					\"bProcessing\": true,\n					\"bServerSide\": true,\n					\"sAjaxSource\": URL+\"egresos/get/comprobantes\",\n					\n\n				/*	var controller_name = 'zipi';\n					\"fnDrawCallback\": function ( oSettings ) {\n                   \n\n                        for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ )\n                        {\n                            var link = $('&nbsp;<a href=\"/'+controller_name+'/modifica/id/'+ oSettings.aoData[ oSettings.aiDisplay[i] ]._aData[0]+'\">Modifica</a> <a href=\"/'+controller_name+'/cancella/id/'+ oSettings.aoData[ oSettings.aiDisplay[i] ]._aData[0]+'\">Cancella</a>');\n                            $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );\n                            $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).append(link);\n                        }\n                	},*/\n					\n					\n									\n				});\n				 \n				$('.nominas').dataTable( {\n					\"aaSorting\": [[ 0, \"desc\" ]],\n					/*\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 1,2,3 ] }, \n				               		 { \"sClass\": \"text-right\", \"aTargets\": [ 4 ] }\n		     	   	],*/\n					\"bProcessing\": true,\n					\"bServerSide\": true,\n					\"sAjaxSource\": URL+\"egresos/get/nominas\",									\n				});\n				\n				//Autocalculo de Monto en Retención\n				$(\"#add-retencion-ficha [name='total_factura']\").keyup(function() {\n					factura_total = $(this).val();\n					//Obtener Monto sin IVA\n					resultado 	= factura_total / VALOR_IVA;\n					//Calcular Retención\n					a_retener	= resultado * VALOR_RETENCION;					\n					resultado 	= roundNumber(factura_total - a_retener);	\n									\n					$(\"[name='monto']\").val(resultado);\n					\n				});\n				\n				var add_egreso_prov = '#addegreso-proveedor';\n				$(add_egreso_prov).validate({				\n					rules: {\n					   rif:{\n		                	\"rif\": true,\n			                remote: {\n		                    	url: urlCheck+'entidades/check/proveedor',\n		                    	type: 'post',\n		                    }\n		               },\n		               base_imponible: \"bsformat\",\n					   alicuota: \"number\",					   \n					},\n					messages: {\n		                rif: {\n		                    remote:jQuery.format(\"\\\"{0}\\\" ya está registrado, revise la lista\")\n		                },		                \n		            },				\n					submitHandler: function(form) {\n						$.ajax({\n						  type: \"POST\",\n						  url: URL+\"egresos/add/egreso/proveedor\",\n						  data: $(form).serialize(),\n						  timeout: 5000,\n						  success: function(response) {\n						  	console.log(response);\n							 	$(add_egreso_prov).closest('form').find(\"input, textarea\").val(\"\");\n								$(add_egreso_prov).closest('form').find(\"select\").select2('data', null);								\n								\n							 	$('#add-egreso-proveedor').modal('hide');\n							 	//Create then show 								 	\n							 	view('comprobantes',response);							   	\n						  },\n						  error: function(response) {\n							  console.log(response);\n							  $(add_egreso_prov).animate({opacity: 0, left: \"-=300\", }, 800);\n							  $('#failed').bPopup({ modal: false });\n						  }\n						});\n						return false;\n					}\n				});\n				\n				//Nomina Date range\n				\n				/*$('#fecha_desde').datepicker().on('changeDate', function(ev){\n					console.log(ev.date.valueOf()+)\n				});				\n				*/\n							\n				var add_egreso_nom = '#addegreso-nomina';\n				$(add_egreso_nom).validate({				\n					rules: {\n						\"empleados[]\": {\n					    	required: true,        \n						},\n					    fecha_desde:{\n		                	remote: {\n		                    	url: urlCheck+'egresos/check/nomina',\n		                    	type: 'post',\n		                    }\n		               },\n			        },\n			        messages: {\n			            fecha_desde: {\n		                    remote:jQuery.format(\"Esta quincena ya fue creada\")\n		                },		                \n		            },	\n								\n					submitHandler: function(form) {\n						$.ajax({\n						  type: \"POST\",\n						  url: URL+\"egresos/add/egreso/nomina\",\n						  data: $(form).serialize(),\n						  timeout: 5000,\n						  success: function(response) {\n						  	console.log(response);\n							 	$(add_egreso_nom).find(\"input:text\").val(\"\");\n							 	$('input:checkbox').attr('checked',false);\n							\n							 	$('#add-egreso-nomina').modal('hide');\n							 	//Create then show 								 	\n							 	view('nominas',response);							   	\n						  },\n						  error: function(response) {\n							  console.log(response);\n							  $(add_egreso_prov).animate({opacity: 0, left: \"-=300\", }, 800);\n							  $('#failed').bPopup({ modal: false });\n						  }\n						});\n						return false;\n					}\n				});\n\n			break;\n		case 'cobros':\n		\n			$(\".chosen-select\").select2( { placeholder: 'Seleccione...', width: '100%' });	\n			//formEnhancement();	\n			$(\"#tipo_nota\").select2( { \n				placeholder: 'Forma de Pago...',\n				minimumResultsForSearch: -1,\n				width: '100%',\n			});	\n			$('.datepicker').datepicker({});\n			\n			$('.facturas').dataTable( {\n				\"aaSorting\": [[ 0, \"desc\" ]],\n				\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 7 ] }, \n				               		 { \"sClass\": \"text-right\", \"aTargets\": [ 3 ] },\n				               		 { \"sClass\": \"text-left\", \"aTargets\": [ 1 ] },\n				               		 { \"sClass\": \"format_texts\", \"aTargets\": [ 4,6 ] }\n		     	 ],\n		     	\"fnCreatedRow\": function( nRow, aData, iDataIndex ) {\n                    //If ANULADO\n                    if (aData[6] == \"si\") {\n                        // color rows from 0-7\n                        for (var i = 0; i < 8; i++) {\n                            $('td:eq('+i+')', nRow).addClass( \"anulado\" );\n                        }\n						//Remove \"Anulado\" button\n						$('td:eq(7)', nRow).closest('td').find('.btn-danger').remove();\n                    }\n                    \n               	},\n				\"bProcessing\": true,				\n				\"bServerSide\": true,\n				\"sAjaxSource\": URL+\"cobros/get/facturas\",									\n			});\n			\n			//TODO actualizar ficha cliente\n			$('#razon_social-select').change(function() {\n				/*$.post(URL+\"/\"+what+\"/load/\"+element+\"/\"+id, function(data){\n					$('#ficha-cliente').hide().html(data).fadeIn('slow');					\n				});*/\n				//var id = $(this).select2('val').toString();	loadFichaAgenda('cliente', id);\n				console.log('actualizar');\n				//loadFichaAgenda('cliente', id);\n			});\n			\n			$('#tipo_nota').change(function() {\n				var seleccion = $(this).select2('val').toString();	\n				if (seleccion != 'factura') {\n					$('#facturas_afectadas').removeAttr('disabled');\n				} else {\n					$('#facturas_afectadas').attr('disabled', 'disabled');		\n				}		\n				console.log(seleccion);\n			});\n			\n			$('#addfactura').validate({				\n				rules: {\n					cliente: 'required',			   \n				},\n				submitHandler: function(form) {\n					$.ajax({\n					  type: \"POST\",\n					  url: URL+\"cobros/add/factura\",\n					  data: $(form).serialize(),\n					  timeout: 5000,\n					  success: function(response) {\n					  	console.log(response);\n						 	$('#add-factura').closest('form').find(\"input, textarea\").val(\"\");\n							\n						 	$('#add-factura').modal('hide');\n						 	//Create then show 								 	\n							view('facturas',response);							   	\n					  },\n					  error: function(response) {\n						  console.log(response);\n						  $('#failed').bPopup({ modal: false });\n					  }\n					});\n					return false;\n				}\n			});\n			\n			break;			\n		\n		default:\n		\n			break;		 			\n			\n	} // end SWITCH\n	\n	\n	\n	\n	\n	\n	\n	\n	// IN ALL PAGES\n	\n	$('.topmenu').css('display','none').delay(700).slideDown(\"slow\");\n	\n	$('#profile').hover(function (){\n		$('#profile-icon').toggleClass('animated rotateAlone');\n	});\n	\n	// Mensaje tipo Tooltip en Botones \".actions\"\n	$('.actions').hover(function () {\n		var mensaje = $(this).attr('id');\n		$('.details').toggleClass(mensaje);\n	});\n	\n	\n	\n	/* Campos Adicionales  en Formulario */\n	var phonesDiv = $('#phonenumbers');\n    var f = $('#phonenumbers p').size() + 1;\n	\n	\n	var emailsDiv = $('#emailaddresses');\n	var g = $('#emailaddresses p').size() + 1;\n	\n	//TODO unificar funcion de agregar campos\n	\n	$('.action-icon-add-email').bind('click', function() {\n		\n		var fieldToAdd = '<div><input type=\"email\" name=\"telefono' + g +'\" placeholder=\"Otro Email\" /><i class=\"icon-minus-sign action-icon-delete\"></i></div>';\n		\n		$(fieldToAdd).appendTo(emailsDiv);\n        g++;\n        return false;		\n    });\n    \n    $('.action-icon-add').bind('click', function() {\n		\n		var fieldToAdd = '<div><input type=\"text\" name=\"telefono' + f +'\" placeholder=\"Otro teléfono\" /><i class=\"icon-minus-sign action-icon-delete\"></i></div>';\n		\n		$(fieldToAdd).appendTo(phonesDiv);\n		$(\"[name='telefono\"+f+\"']\").mask(\"(0999) 999.99.99\");\n        f++;\n        return false;		\n    });\n        \n	 \n	$('#container').on('click','.action-icon-delete', function () {\n		$(this).parent().remove();\n	});\n	\n	/* Incrementers */\n	//$(\"form div\").append('<div class=\"inc button\">+</div> <div class=\"dec button\">-</div>');\n	$(\".increaser\").on(\"click\", function() {\n	\n	  var $button = $(this);\n	  var oldValue = $button.parent().find(\"input\").val();\n	\n	  if ($button.text() == \"+\") {\n		  var newVal = parseFloat(oldValue) + 1;\n		} else {\n	   // Don't allow decrementing below zero\n		if (oldValue > 0) {\n		  var newVal = parseFloat(oldValue) - 1;\n		} else {\n		  newVal = 0;\n		}\n	  }\n	\n	  $button.parent().find(\"input\").val(newVal);\n	\n	});\n	\n	\n	/* PERSISTENTS */\n	\n	/* Agenda */\n	\n	\n	/* ADD proveedor */\n	$('#add-proveedor form').validate({				\n		rules: {\n			rif:{\n	        	\"rif\": true,\n		        	remote: {\n	                	url: urlCheck+'entidades/check/proveedor',\n	                    	type: 'post',\n	                    }\n	               },\n	         },\n		messages: {\n	        rif: {\n	              remote:jQuery.format(\"\\\"{0}\\\" ya está registrado, revise la lista\")\n	             },\n	    },				\n		submitHandler: function(form) {\n			$.ajax({\n				type: \"POST\",\n				url: URL+'entidades/add/proveedor',\n				data: $(form).serialize(),\n					timeout: 5000,\n					success: function(response) {\n						console.log('works'+response);\n							$('#add-proveedor').closest('form').find(\"input, textarea\").val(\"\");\n							$('#add-proveedor').closest('form').find(\"select\").select2('data', null);\n							\n						 	$('#add-proveedor').modal('hide');\n						   						   \n							//$('#confirm').bPopup({ modal: false });										   	\n					  },\n				error: function(response) {\n						  console.log(response);\n						  $('#failed').bPopup({ modal: false });\n					  }\n				});\n				return false;\n		}\n	});\n	\n	$('#add-cliente form').validate({				\n		rules: {\n			rif:{\n	        	\"rif\": true,\n		        	remote: {\n	                	url: urlCheck+'entidades/check/cliente',\n	                    	type: 'post',\n	                    }\n	               },\n	         },\n		messages: {\n	        rif: {\n	              remote:jQuery.format(\"\\\"{0}\\\" ya está registrado, revise la lista\")\n	             },\n	    },				\n		submitHandler: function(form) {\n			$.ajax({\n				type: \"POST\",\n				url: URL+'entidades/add/cliente',\n				data: $(form).serialize(),\n					timeout: 5000,\n					success: function(response) {\n						console.log('works'+response);\n							$('#add-cliente').closest('form').find(\"input, textarea\").val(\"\");\n							$('#add-cliente').closest('form').find(\"select\").select2('data', null);\n							\n						 	$('#add-cliente').modal('hide');\n						   						   \n							//$('#confirm').bPopup({ modal: false });										   	\n					  },\n				error: function(response) {\n						  console.log(response);\n						  $('#failed').bPopup({ modal: false });\n					  }\n				});\n				return false;\n		}\n	});\n	\n	\n	\n});\n\n/* END Document Ready */\n\nfunction formEnhancement() {\n	\n	$('.modalbox').on('shown.bs.modal', function (e) {\n		$(\"select\").select2('data', {});\n		$('#razon_social-input').removeAttr('disabled');\n		$(\"[name='rif']\").removeAttr('disabled');\n		$(\"[name='direccion']\").removeAttr('disabled');\n		$(\"[name='telefono']\").removeAttr('disabled');					\n	});\n			\n	/* Form enhancement */\n	$(\".chosen-select\").select2( { placeholder: 'Seleccione...', width: '100%' });	\n	$('.datepicker').datepicker({});	\n	$(\"[name='telefono']\").mask(\"(0999) 999.99.99\");\n	$(\"[name='rif']\").mask(\"*-99999999-9\");\n	\n	$('#razon_social-select').change(function(){\n		$('#razon_social-input').removeAttr('required').attr('disabled', 'disabled');\n		$('#razon_comercial').attr('disabled', 'disabled');\n		$(\"[name='rif']\").removeAttr('required').attr('disabled', 'disabled');\n		$(\"[name='direccion']\").attr('disabled', 'disabled');\n		$(\"[name='telefono']\").attr('disabled', 'disabled');			\n	});\n}\n		    \n\nfunction showModal(modalid){\n	\n	$('#'+modalid).modal('show');\n	\n}\n\nfunction currentPlanilla(impuesto){\n	\n	$.post(URL+\"impuestos/\"+impuesto+\"/load/current\", function(data){\n			\n		$('#ver-planilla .modal-body').hide().html(data).fadeIn('slow');\n		showModal('ver-planilla');\n		initPlanillaedit();////$('#compras-list-body').hide().html(data).fadeIn('slow');\n	});\n		\n	return false;	\n}\nfunction createfrom(what, from, id) {\n	switch(what){\n		case 'comprobante': 	var controller = 'egresos'; 		break;\n	}\n	$.post(URL+controller+\"/create/\"+what+\"/from/\"+from+\"/\"+id, function(data){\n		console.log (what+id+from+controller);\n			\n	});\n}\n\n\n\nfunction edit(what,id){\n	\n	switch (what) {\n		case 'iva':				var controller = 'impuestos';		var element = 'planilla';			break;			\n		case 'compras':			var controller = 'impuestos';		var element = 'compra';				break;\n		case 'retenciones': 	var controller = 'impuestos';		var element = 'retencion'; 			break;\n		case 'comprobantes': 	var controller = 'egresos';			var element = 'comprobante'; 		break;\n		case 'facturas':		var controller = 'cobros';			var element = 'factura';			break;\n		case 'presupuestos':	var controller = '';	var element = 'presupuesto';		break;\n		case 'presupuesto_detalle':			var controller = 'presupuestos';		var element = 'detalle';				break;\n	}\n\n	$.post(URL+controller+\"/\"+what+\"/edit/\"+element+\"/\"+id, function(data) {			\n		$('#ver-'+element+' .modal-body').hide().html(data).fadeIn('slow');\n		//console.log ('ver-'+element);	\n		showModal('ver-'+element);\n		switch (what) {\n			case 'iva':				initPlanillaedit();	break;			\n			case 'compras':			initEdit(); 		break;\n			case 'retenciones':		initEdit(); 		break;\n			case 'comprobantes':	initEdit(); 		break;\n			case 'facturas':	initEdit(); 		break;\n			case 'presupuestos':	initValidate(); 		break;\n			case 'presupuesto_detalle':			initEdit(); 		break;\n		}\n		$('.soloenview').addClass('hide');\n		\n	});\n		\n	return false;	\n}\nfunction initEdit() {\n	$('.editable').editable({\n		url: 'editinline',\n	    success: function(response, newValue) {\n	    console.log(response);			       \n	 	}\n	});\n	\n}\n\nfunction initValidate() {\n	\n	$('#addstatus').validate({	\n				\n	           \n				submitHandler: function(form) {\n					\n					$.ajax({\n					  type: \"POST\",\n					  url:  URL+'presupuestos/update_status/',\n					  data: $(form).serialize(),\n					  timeout: 5000,\n					  success: function(response) {\n						  console.log('pasa'+response);\n						  $('.close').click();\n						  $('.status').dataTable().fnDraw();	\n										   	\n					  },\n					  error: function(response) {\n						  console.log(response);\n						 \n						  $('#failed').bPopup({ modal: false });\n					  }\n					});\n					return false;\n				}\n			});\n			\n}\n\n\nfunction compras_check() {\n	\n	$('.aprobacion').click( function() {		\n		$(this).children('i').toggleClass('glyphicon-ok glyphicon-remove');\n		//update list?\n		change = $(this).children('i').attr('class').split(' ')[1];\n		id = $(this).attr('id').split('-')[1];\n		console.log(change +' '+id);\n		\n		$.post(URL+\"impuestos/aprobe/\"+id+\"/\"+change, function(data){\n			\n			//when update, update resume\n			$.post(URL+\"impuestos/load/current/resumen/\", function(data) {			\n				$('#resumen').hide().html(data).fadeIn('slow');\n				validateResumen();\n			});\n			\n			\n		});\n	});\n	\n	\n}\n\nfunction initPlanillaedit() {\n	validateResumen();\n	$('.editable').editable({\n		url: 'editinline',\n	    success: function(response, newValue) {\n	    console.log(response);			       \n	 	}\n	});\n	\n	$('.datepicker').datepicker({});\n	\n	compras_check();\n	\n		\n	/*$('.select-registrant').editable({\n		showbuttons: false, \n		source: [		              \n		\n		]\n		,url: 'editinline',\n		success: function(response, newValue) {\n			console.log(response);\n		     // if(response.status == 'error') return response.msg; //msg will be shown in editable form\n		}       \n    });	  */\n}	\n\nfunction validateResumen() {\n	\n	$('.datepicker').datepicker({});\n	\n	$('#add-iva').validate({				\n								\n		submitHandler: function(form) {\n			$.ajax({\n				type: \"POST\",\n				url: URL+'impuestos/add/iva',\n				data: $(form).serialize(),\n				timeout: 5000,\n				success: function(response) {\n					console.log('works'+response);\n					//	$('#add-proveedor').closest('form').find(\"input, textarea\").val(\"\");\n					//	$('#add-proveedor').closest('form').find(\"select\").select2('data', null);\n				 	$('#add-proveedor').modal('hide');\n					//$('#confirm').bPopup({ modal: false });										   	\n			 	},\n				error: function(response) {\n					 console.log(response);\n					$('#failed').bPopup({ modal: false });\n				}\n			});\n			return false;\n		}\n	});	\n}\nfunction updatelist(element){\n	$.post(URL+\"impuestos/\"+element+\"/reload\", function(data){\n			\n		$('#list-body-'+element).hide().html(data).fadeIn('slow');\n		\n	});\n	//initList();\n	return false;\n}\n\nfunction initList(righty) {\n	$('#list-results').dataTable( {\n		\"sDom\": \"<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>\",\n		\"aaSorting\": [[ 0, \"desc\" ]],\n		\"aoColumnDefs\": [{ \"bSortable\": false, \"aTargets\": [ 6 ] }, \n		                { \"bSearchable\": false, \"aTargets\": [ 6 ] },\n		               { \"sClass\": \"text-right\", \"aTargets\": [ righty ] }\n        ],				\n	   \"sPaginationType\": \"bootstrap\",\n	   \"iDisplayLength\": 10,\n		\"oLanguage\": {\n			\"sLengthMenu\": \"_MENU_ por pag\",\n			\"sEmptyTable\": \"No hay datos\",\n		}\n	});\n}	  	\n\nfunction loadDomains(){\n		\n	$.post(URL+\"dominios/reload\", function(data){\n			\n		$('#dominios-list-body').hide().html(data).fadeIn('slow');\n	});\n		\n	initDomainDetails();\n	\n	return false;	\n}\n\nfunction loadDomainDetails(id) {\n		\n	$.post(URL+\"dominios/load/details/\"+ id, function(data){\n			\n	$('#years-details-'+id).hide().html(data).fadeIn('slow');\n			\n		initDomainDetails();\n			\n		$('#details-'+id).collapse('show');	\n\n	});\n			\n		\n	return false;\n}\n\nfunction initDomain() {\n	\n	$('.details-loader').click(function() {\n		var valor =	$(this).attr('href');\n		var array  = 	valor.split( '-' );				\n		loadDomainDetails(array[1]);\n				\n	});\n						\n}\n\nfunction initDomainDetails () {\n	$('.editable').editable({\n		url: 'editinline',\n	    success: function(response, newValue) {\n	    console.log(response);			       \n	 	}\n	});\n			\n	$('.select-registrant').editable({\n		showbuttons: false, \n		source: [		              \n		/*  {value: \"Alejandro\", text: 'Alejandro (Godaddy)'},			{value: \"Conatel\", text: 'Conatel (nic.ve)'},		{value: \"Caracas Hosting\", text: 'Caracas Hosting'},\n				{value: \"Marcaria\", text: 'Marcaria'},			 {value: \"Godaddy\", text: 'Godaddy'},			{value: \"Cliente\", text: 'Lo maneja el cliente'}*/\n		]\n		,url: 'editinline',\n		success: function(response, newValue) {\n			console.log(response);\n		     // if(response.status == 'error') return response.msg; //msg will be shown in editable form\n		}       \n    });	    \n		    \n	\n	 $('.select-hosting').editable({\n		showbuttons: false, \n		url: 'editinline',\n			success: function(response, newValue) {\n		    console.log(response);			       \n			}\n		});\n		    \n		$('.select-mail_server').editable({\n			showbuttons: false, \n		    url: 'editinline',\n		    success: function(response, newValue) {\n		    	console.log(response);			       \n			}\n		});\n		\n		//This button triggers the creation of the renewal\n		$('[name=\"renew\"]').change(function(){\n					\n			var valor 	 =  $(this).attr('id');					\n			var renewalArray  = 	valor.split( '-' );\n					\n			var anio 		= renewalArray[1];\n			var id_domain	= renewalArray[2];\n					\n			    	\n			$(this).attr('disabled', 'disabled');\n				$.ajax({\n					type: \"POST\",\n					url: \"add/renewal\",\n					data: { year: anio, domain_id: id_domain },\n					timeout: 5000,\n					success: function(response) {\n						console.log('works'+response);\n						//Update 'details-'+id_domain\n						loadDomainDetails(id_domain);\n					},\n					error: function(response) {\n						console.log('error: '+response);\n						\n					}\n				});\n		});\n}\n\nfunction eliminate_notifications(id){\n	//console.log(URL+\"home/notification_checked/\"+id);\n	$.post(URL+\"home/notification_checked/\"+id, function(data) {\n		$.post(URL+\"home/listNotificaciones/\"+id, function(data) {\n			$(\"#notifications-update\").html(data);\n		});		\n		//$('.not'+id).hide();	\n	   // console.log('#not'+id);		\n		\n	});\n	\n}\n\n\nfunction validateStep(step){\n	\n	switch(step) {\n		\n		case 'presupuestos-delegate-step2':\n			console.log('Yay 2!');\n			break;\n		case 'presupuestos-delegate-step3':\n			console.log('Yay 3!');\n			break;\n		case 'presupuestos-delegate-step4':\n			console.log('Yay 4!');\n			break;\n	}	\n}\n\nfunction traduce_fecha(fecha){\n	var res = fecha.split(\"-\");\n	return res[2]+\"/\"+res[1]+\"/\"+res[0];\n}\n\nfunction presupuestosDelegate() {\n	\n	var $validator =\n		\n		$('#formulario').validate({\n			rules: {\n			    tipo_trabajo: \"required\",\n			},			\n			submitHandler: function(form) {\n				$.ajax({\n				  type: \"POST\",\n				  url: \"petition\",\n				  data: $(form).serialize(),\n				  timeout: 12000,\n				  success: function(response) {\n					  console.log('works'+response);\n					   $('#formulario').animate({opacity: 0, left: \"-=300\", }, 800);					  \n					   $('#confirm').bPopup({ modal: false });\n				  },\n				  error: function(response) {\n					  console.log(response);\n					  $('#formulario').animate({opacity: 0, left: \"-=300\", }, 800);\n					  $('#failed').bPopup({ modal: false });\n				  }\n				});\n				return false;\n			}\n		});\n		\n	//jQuery time\n	var current_fs, next_fs, previous_fs; //fieldsets\n	var left, opacity, scale; //fieldset properties which we will animate\n	var animating; //flag to prevent quick multi-click glitches\n	var i = 0;\n	\n	$(\".next\").click(function() {\n	\n		//if(animating) return false;\n		//animating = true;\n		\n		current_fs = $(this).parent();\n		next_fs = $(this).parent().next();\n		\n		/* Besign: Validate before going further */\n		//find the form to validate\n		var formulario = $(this).closest('form');\n			\n		var $valid = formulario.valid(); \n			if(!$valid) { \n				$validator.focusInvalid();\n				return false;\n			} //else  continuar!\n			//show the next fieldset\n			next_fs.show(); \n		/*end Besign */	\n	\n		$(\"#progressbar li\").eq($(\"fieldset\").index(next_fs)).addClass(\"active\");	\n		\n		//hide the current fieldset with style\n		current_fs.animate({opacity: 0}, {\n			step: function(now, mx) {\n				//as the opacity of current_fs reduces to 0 - stored in \"now\"\n				//1. scale current_fs down to 80%\n				scale = 1 - (1 - now) * 0.2;\n				//2. bring next_fs from the right(50%)\n				left = (now * 50)+\"%\";\n				//3. increase opacity of next_fs to 1 as it moves in\n				opacity = 1 - now;\n				current_fs.css({'transform': 'scale('+scale+')'});\n				next_fs.css({'left': left, 'opacity': opacity});\n			}, \n			duration: 800, \n			complete: function(){\n				current_fs.hide();\n				animating = false;\n			}, \n			//this comes from the custom easing plugin\n			easing: 'easeInOutBack'\n		});\n		\n	});\n	\n	$(\".previous\").click(function(){\n		if(animating) return false;\n		animating = true;\n		\n		current_fs = $(this).parent();\n		previous_fs = $(this).parent().prev();\n		\n		//de-activate current step on progressbar\n		$(\"#progressbar li\").eq($(\"fieldset\").index(current_fs)).removeClass(\"active\");\n		\n		//show the previous fieldset\n		previous_fs.show(); \n		//hide the current fieldset with style\n		current_fs.animate({opacity: 0}, {\n			step: function(now, mx) {\n				//as the opacity of current_fs reduces to 0 - stored in \"now\"\n				//1. scale previous_fs from 80% to 100%\n				scale = 0.8 + (1 - now) * 0.2;\n				//2. take current_fs to the right(50%) - from 0%\n				left = ((1-now) * 50)+\"%\";\n				//3. increase opacity of previous_fs to 1 as it moves in\n				opacity = 1 - now;\n				current_fs.css({'left': left});\n				previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});\n			}, \n			duration: 800, \n			complete: function(){\n				current_fs.hide();\n				animating = false;\n			}, \n			//this comes from the custom easing plugin\n			easing: 'easeInOutBack'\n		});\n	});\n}",
+			"file": "server/public/js/functions.js",
+			"file_size": 33635,
+			"file_write_time": 131158987540000000,
+			"settings":
+			{
+				"buffer_size": 33750,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -528,11 +609,19 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "pac",
 		"selected_items":
 		[
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 440.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -552,10 +641,42 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/e0979/BESIGN/Quinbi"
+		"/Users/e0979/BESIGN/Quinbi",
+		"/Users/e0979/BESIGN/Quinbi/local",
+		"/Users/e0979/BESIGN/Quinbi/local/html",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js"
 	],
 	"file_history":
 	[
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/main-site.js",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/assets/jquery.maskedinput.min.js",
+		"/Users/e0979/BESIGN/Quinbi/server/public/js/jquery.maskedinput.min.js",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/functions.js",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/app/forms.js",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/app/dashboard.js",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/entidades/proveedores/select.php",
+		"/Users/e0979/BESIGN/Quinbi/local/includes/libs/Api.php",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/css/all.css",
+		"/Users/e0979/BESIGN/Quinbi/server/public/css/all.css",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/entidades/clientes/select.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/views/egresos/list.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/views/egresos/detail.php",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/egresos/comprobantes/ver.php",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/egresos/comprobantes/add.php",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/default/modal/nextprev.php",
+		"/Users/e0979/BESIGN/Quinbi/local/includes/libs/ApiQuery.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/controllers/apiController.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/views/egresos/modal.php",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/egresos/comprobantes/detail.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/views/default/head.php",
+		"/Users/e0979/BESIGN/Quinbi/local/app/views/dashboard.php",
+		"/Users/e0979/BESIGN/Quinbi/local/includes/config/local.php",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/css/localfonts.css",
+		"/Users/e0979/BESIGN/Quinbi/local/includes/config/server.php",
+		"/Users/e0979/BESIGN/Quinbi/local/includes/config/config.php",
+		"/Users/e0979/BESIGN/Quinbi/local/html/public/js/app/tables.js",
+		"/Users/e0979/BESIGN/Quinbi/server/app/views/egresos/comprobantes/comprobantes.php",
 		"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK/html/public/js/functions.js",
 		"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK/html/public/js/app/site.js",
 		"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK/html/public/js/app/login.js",
@@ -655,45 +776,23 @@
 		"/Users/dlarez/Delia-E-Larez/Trabajos/SGrupo/SY+NeoBigBand/Web/neobigband/template-parts/content.php",
 		"/Users/dlarez/Delia-E-Larez/Trabajos/SGrupo/SY+NeoBigBand/Web/neobigband/sidebar-content-bottom.php",
 		"/Users/dlarez/Delia-E-Larez/Trabajos/SGrupo/SY+NeoBigBand/Web/neobigband/sidebar.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/BlupineappleSite/clients-pre.html",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/BlupineappleSite/clients.html",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/BlupineappleSite/css/style.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/screenshot.png",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/content.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/index.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/js/keyboard-image-navigation.js",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/languages/twentysixteen.pot",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/page.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/readme.txt",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/rtl.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/search.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/searchform.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/sidebar-content-bottom.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/sidebar.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/single.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/style.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/biography.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/content-none.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/content-page.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/content-search.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/template-parts/content-single.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/404.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/archive.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/comments.php",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/css/editor-style.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/css/ie.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/css/ie7.css",
-		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/Brigade/brigadebkk/css/ie8.css"
+		"/Users/dlarez/Delia-E-Larez/Trabajos/BLUPineapple/BlupineappleSite/clients-pre.html"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/e0979/BESIGN/Quinbi/server",
+			"/Users/e0979/BESIGN/Quinbi",
+			"/Users/e0979/BESIGN/Quinbi/local",
+			"/Users/e0979/BESIGN/Quinbi/server",
+			"/Users/e0979/BESIGN/Quinbi/local",
+			"/Users/e0979/BESIGN/Quinbi/server",
 			"/Users/dlarez/Delia-E-Larez/Trabajos/BellezaparaLlevar/Web2",
 			"/Users/dlarez/Delia-E-Larez/Trabajos/BS-MVG",
 			"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK",
@@ -815,13 +914,7 @@
 			"/Users/dlarez/Delia-E-Larez/Trabajos/CreativeCentreIntercon",
 			"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK",
 			"/Users/dlarez/Delia-E-Larez/Trabajos/BellezaparaLlevar",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web/html/public/css",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web/app",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web/DAVID",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web",
-			"/Users/dlarez/Delia-E-Larez/",
-			"/Users/dlarez/Delia-E-Larez/Trabajos/BS-OK"
+			"/Users/dlarez/Delia-E-Larez/Trabajos/BEEAPPS/LIKES/Web/html/public/css"
 		]
 	},
 	"find_state":
@@ -829,6 +922,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mask",
+			"search-client",
+			"select2",
+			"razon_social-select",
+			"select",
+			".select2-container .select2-choice",
+			"eleccione Proveedo",
+			"add-",
+			"compro",
+			"modal",
+			"printable-area",
+			"<?php echo $id; ?>",
+			"<?php echo $id; ?",
+			"<?php echo $id; ?>",
+			"		\n",
+			"view(",
+			"../fonts",
+			"local",
+			"GOOGLE_FONTS",
+			"lato",
+			"'lat",
+			"view",
+			"label-warning",
+			".label-warning",
+			"btn-blue",
+			"return '<button",
+			"render",
+			"Employee",
+			"true",
 			"loadWorkArea",
 			"clientsWrap1work",
 			"gold",
@@ -927,36 +1049,7 @@
 			"../fonts/",
 			"fontawesome",
 			"calc",
-			"shipping_cal",
-			"iframe",
-			"-6",
-			"poolday",
-			"/www.poolday.info/1000",
-			"7BAABE",
-			"secondPage",
-			"firstPage",
-			"Maria A",
-			"firstPage",
-			"loadModel",
-			"menu",
-			"section",
-			"fullPage",
-			"circlesAnimation",
-			"scrollTop",
-			"assets",
-			">main",
-			"main",
-			"\"imgs/",
-			"'],\n",
-			"$",
-			"account",
-			"hidemes",
-			"featured-article hidemes",
-			"large-7 medium-7 small-12 featured-article hidemes columns",
-			"waitSeconds",
-			"loadform",
-			"yeseflores.com",
-			" class=\"fadein\" style=\"opacity: 1;\""
+			"shipping_cal"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1006,14 +1099,280 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "local/html/public/js/app/egresos.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "local/html/public/js/app/forms.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								490,
+								490
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "local/app/views/entidades/proveedor/select.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								121
+							]
+						],
+						"settings":
+						{
+							"auto_name": "select.php",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "local/app/views/egresos/add.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								631,
+								631
+							]
+						],
+						"settings":
+						{
+							"auto_name": "add.php",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 61.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "server/app/controllers/egresosController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3854,
+								3854
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2527.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "local/app/views/default/modal/nextprev.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								719,
+								719
+							]
+						],
+						"settings":
+						{
+							"auto_name": "nextprev",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "local/html/public/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8312,
+								8312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "server/public/css/quinbi.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23643,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23080,
+								23080
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 13238.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "server/public/js/functions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9131,
+								9138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4695.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -1050,7 +1409,7 @@
 	"project": "Quinbi.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1059,6 +1418,122 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"masked",
+				"server/public/js/jquery.maskedinput.min.js"
+			],
+			[
+				"fun",
+				"local/html/public/js/functions.js"
+			],
+			[
+				"servselec",
+				"server/app/views/entidades/proveedores/select.php"
+			],
+			[
+				"api",
+				"local/includes/libs/Api.php"
+			],
+			[
+				"all",
+				"local/html/public/css/all.css"
+			],
+			[
+				"select",
+				"server/app/views/entidades/clientes/select.php"
+			],
+			[
+				"dash",
+				"local/html/public/js/app/dashboard.js"
+			],
+			[
+				"provese",
+				"server/app/views/entidades/proveedores/select.php"
+			],
+			[
+				"ver",
+				"server/app/views/egresos/comprobantes/ver.php"
+			],
+			[
+				"compad",
+				"server/app/views/egresos/comprobantes/add.php"
+			],
+			[
+				"lis",
+				"local/app/views/egresos/list.php"
+			],
+			[
+				"next",
+				"server/app/views/default/modal/nextprev.php"
+			],
+			[
+				"quer",
+				"local/includes/libs/ApiQuery.php"
+			],
+			[
+				"detail",
+				"server/app/views/egresos/comprobantes/detail.php"
+			],
+			[
+				"servegre",
+				"server/app/controllers/egresosController.php"
+			],
+			[
+				"das",
+				"local/html/public/js/app/dashboard.js"
+			],
+			[
+				"comver",
+				"server/app/views/egresos/comprobantes/ver.php"
+			],
+			[
+				"head",
+				"local/app/views/default/head.php"
+			],
+			[
+				"local",
+				"local/includes/config/local.php"
+			],
+			[
+				"localf",
+				"local/html/public/css/localfonts.css"
+			],
+			[
+				"serv",
+				"local/includes/config/server.php"
+			],
+			[
+				"con",
+				"local/includes/config/config.php"
+			],
+			[
+				"loc",
+				"local/html/public/css/localfonts.css"
+			],
+			[
+				"sty",
+				"local/html/public/css/styles.css"
+			],
+			[
+				"tab",
+				"local/html/public/js/app/tables.js"
+			],
+			[
+				"func",
+				"local/html/public/js/functions.js"
+			],
+			[
+				"quin",
+				"server/public/css/quinbi.css"
+			],
+			[
+				"apiq",
+				"local/includes/libs/ApiQuery.php"
+			],
+			[
+				"egrjs",
+				"local/html/public/js/app/egresos.js"
+			],
 			[
 				"main-app",
 				"BS-MVG/html/public/js/main-app.js"
@@ -1176,10 +1651,6 @@
 				"BS-OK/html/public/js/functions.js"
 			],
 			[
-				"api",
-				"BS-OK/includes/libs/Api.php"
-			],
-			[
 				"appojs",
 				"BS-OK/html/public/js/app/appointments.js"
 			],
@@ -1254,10 +1725,6 @@
 			[
 				"usersedit",
 				"BS-MVG/app/views/cde/users/edit.php"
-			],
-			[
-				"detail",
-				"BS-MVG/app/views/cde/users/detail.php"
 			],
 			[
 				"usersall",
@@ -1460,116 +1927,8 @@
 				"BS-OK/app/views/panel/nav.php"
 			],
 			[
-				"apiq",
-				"BS-OK/includes/libs/ApiQuery.php"
-			],
-			[
 				"api.p",
 				"BS-OK/includes/libs/Api.php"
-			],
-			[
-				"main-se",
-				"BS-OK/html/public/js/main-settings.js"
-			],
-			[
-				"main-p",
-				"BS-OK/html/public/js/main-panel.js"
-			],
-			[
-				"main-pan",
-				"WORDPRESS THEMES/themeforest-7151468-xone-clean-one-page-wordpress-theme/Xone-1.0-WP/xone/theme-admin/option-panel/option-panel.php"
-			],
-			[
-				"common",
-				"BS-OK/html/public/js/common.js"
-			],
-			[
-				"stepf",
-				"BS-OK/html/public/js/appassets/stepform.js"
-			],
-			[
-				"start-p",
-				"BS-OK/html/public/js/app/start-panel.js"
-			],
-			[
-				"settings.js",
-				"BS-OK/html/public/js/app/settings.js"
-			],
-			[
-				"panel.j",
-				"BS-OK/html/public/js/app/panel.js"
-			],
-			[
-				"appoin",
-				"BS-OK/html/public/js/app/appointments.js"
-			],
-			[
-				"login.j",
-				"BS-OK/html/public/js/app/login.js"
-			],
-			[
-				"setti",
-				"BS-OK/html/public/css/settings.css"
-			],
-			[
-				"all.css",
-				"BS-OK/html/public/css/all.css"
-			],
-			[
-				"settinnav",
-				"BS-OK/app/views/settings/default/nav.php"
-			],
-			[
-				"settinhe",
-				"BS-OK/app/views/settings/default/head.php"
-			],
-			[
-				"settings/foo",
-				"BS-OK/app/views/settings/default/footer.php"
-			],
-			[
-				"add-inter",
-				"BS-OK/app/views/panel/schedule/add-interval.php"
-			],
-			[
-				"head.php",
-				"BS-OK/app/views/default/head.php"
-			],
-			[
-				"sitec",
-				"BS-OK/app/controllers/siteController.php"
-			],
-			[
-				"apic",
-				"BS-OK/app/controllers/apiController.php"
-			],
-			[
-				"acc",
-				"BS-OK/app/controllers/accountController.php"
-			],
-			[
-				"main-site",
-				"BS-OK/html/public/js/main-site.js"
-			],
-			[
-				"start",
-				"BS-OK/html/public/js/app/start-site.js"
-			],
-			[
-				"main-s",
-				"BS-OK/html/public/js/main-site.js"
-			],
-			[
-				"search.js",
-				"BS-OK/html/public/js/app/search.js"
-			],
-			[
-				"panel.js",
-				"BS-OK/html/public/js/app/panel.js"
-			],
-			[
-				"caroufredsel",
-				"BS-OK/html/public/js/assets/jquery.carouFredSel-6.1.0-packed.js"
 			]
 		],
 		"width": 0.0
@@ -1600,7 +1959,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 291.0,
+	"side_bar_width": 195.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
