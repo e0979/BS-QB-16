@@ -1,9 +1,10 @@
 define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTables.min', 'app/tables', 'app/dashboard', 'app/forms'], function(globals, Functions, Handlebars, DataTable, Tables, Dashboard, Forms) {
 	
 	function run() {
+
 		loadTableData('comprobantes');
 		//temp
-		$('#add-egreso').modal('show');
+		//$('#add-egreso').modal('show');
 
 		$('#add-egreso').on('shown.bs.modal', function (e) {
 		  Dashboard.loadDataSelect('proveedor');
@@ -32,6 +33,7 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 		var table = 
 		$('.comprobantes').DataTable({
 			"order": [[0, "desc" ]],
+			"bSortClasses": "bootstrap",
 			columns: [
 	            { data: "id" },
 	            { data: "fecha" },
@@ -60,11 +62,14 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 	        	{ "class"		: "text-right",	"targets": [ 3 ] },
 	        ],
 	        processing : true,
+	        createdRow: function ( row, data, index ) {
+
+	        },
 			//serverSide : true,
 			ajax: globals.URL+"api/get/json/egresos_comprobantes/%20/%20/true",
 			/*createdCell : 	function (cell, cellData, rowData, rowIndex, colIndex) {
 					        	activeButtons(); //$(".showtooltip", cell).tooltip();
-					      	}*/				
+					      	}*/	
 		});
 		activeButtons();
 	}

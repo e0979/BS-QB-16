@@ -3,7 +3,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                <span class="sr-only"></span> <span class="icon-bar"></span><span
                     class="icon-bar"></span><span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Brand</a>
@@ -13,9 +13,9 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
 
-                 <li class="dropdown">
+                <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="fa fa-user"></span> Entidades <b class="caret"></b></a>
+                    <span class="fa fa-user"></span> &nbsp; Entidades <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#" data-toggle="modal" data-target="#agenda-cliente">
@@ -29,24 +29,65 @@
                         </li>                        
                     </ul>
                 </li>
-
-
-
-
-
-                <li><a href="#"><span class="glyphicon glyphicon-calendar"></span>Calendar</a></li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-list-alt"></span>Widgets <b class="caret"></b></a>
+                <!-- Egresos -->
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="fa fa-credit-card"></span> &nbsp; Pagos <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://www.jquery2dotnet.com">Action</a></li>
-                        <li><a href="http://www.jquery2dotnet.com">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#add-egreso">
+                                <i class="fa fa-plus"></i> &nbsp; Emitir Pago
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#add-egreso-banco">
+                                <i class="fa fa-plus"></i> &nbsp; Registrar movimiento Banco
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#egresos">
+                                <i class="fa fa-search"></i> &nbsp; Comprobantes de Egreso
+                            </a>
+                        </li> 
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#add-egreso-nomina">
+                                <i class="fa fa-plus"></i> &nbsp; Emitir Pago Nómina
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#egresos/nominas">
+                                <i class="fa fa-search"></i> &nbsp; Nóminas emitidas
+                            </a>
+                        </li>                       
                     </ul>
                 </li>
+                <!-- Cobranzas -->
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="fa fa-money"></span> &nbsp; Cobros <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#add-factura">
+                                <i class="fa fa-plus"></i> &nbsp; Emitir Factura
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#add-pago-factura">
+                                <i class="fa fa-plus"></i> &nbsp; Ingresar pago Factura
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cobros/facturas">
+                                <i class="fa fa-search"></i> &nbsp; Facturas
+                            </a>
+                        </li>                        
+                    </ul>
+                </li>
+
+
+
+
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
                     class="glyphicon glyphicon-search"></span>Search <b class="caret"></b></a>
                     <ul class="dropdown-menu" style="min-width: 300px;">
@@ -69,17 +110,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-comment"></span>Chats <span class="label label-primary">42</span>
-                </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="label label-warning">7:00 AM</span>Hi :)</a></li>
-                        <li><a href="#"><span class="label label-warning">8:00 AM</span>How are you?</a></li>
-                        <li><a href="#"><span class="label label-warning">9:00 AM</span>What are you doing?</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#" class="text-center">View All</a></li>
-                    </ul>
-                </li>
+                
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
                     class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
                 </a>

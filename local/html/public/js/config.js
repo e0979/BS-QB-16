@@ -6,7 +6,7 @@ var isProcessing = false;
 
 if (modo === 'local') {
 	//var URL = "http://192.168.1.107/Edil/Web/";
-	var URL = "http://localhost:8888/Quinbi/local/html/";
+	var URL = "http://localhost/Quinbi/local/html/";
 	var urlCheck = '/html/';
 
 	var position = 2;
