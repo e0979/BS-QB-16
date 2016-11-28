@@ -49,8 +49,16 @@ class Api extends ApiQuery {
 			//This would be used for jquery.DataTable to convert array to 'data'
 			$what = "data"; 
 		} 
+		$final_i = sizeof($array_entity);
+
 		foreach ($array_entity as $Entity) {
 			$array_final[$what][$i] = $Entity;
+			if ($i == 0){
+				$array_final[$what][$i]['isFirst'] = '1';
+			}
+			if($i == $final_i) {
+				$array_final[$what][$i]['isLast'] = '1';	
+			}
 			$i++;
 		}
 
@@ -60,6 +68,7 @@ class Api extends ApiQuery {
 			return $array_final;
 		}
 	}
+	
 	
 }
 ?>

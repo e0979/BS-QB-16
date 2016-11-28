@@ -21,6 +21,7 @@ define(function() {
 			//Version 1
 			cache[url] = $('<div class="view"/>').appendTo('#mainarea').load('../'+url, function() {
 				switch(active_page[0]) {
+					
 					/*case "doctor":
 						$('<div class="view"/>').appendTo('#mainarea').load(URL+url, function(){
 							require(['app/doctor'], function(Doctor) {
@@ -38,6 +39,14 @@ define(function() {
 						require(['app/'+controler], function(controler) {
 							controler.run();
 						});
+						switch(active_page[1]) {
+							default:
+								/*var controler2 = active_page[0]
+								require(['app/'+controler2], function(controler2) {
+									controler2.run();
+								});*/
+							break;
+						}
 						break;
 				}
 			});

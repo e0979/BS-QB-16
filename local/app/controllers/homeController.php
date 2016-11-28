@@ -15,7 +15,7 @@
 
 		function loginscreen() {
 			
-			$this->view->titulo = SITE_NAME. ' | login ';		
+			$this->view->title = SITE_NAME. ' | login ';		
 
 			$this->view->render('default/head-login');			
 			$this->view->render('login');			

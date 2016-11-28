@@ -1,6 +1,6 @@
 <?php
 		//Path Info
-		define ('URL', "http://localhost/Quinbi/local/html/"); 
+		define ('URL', "http://localhost/QB/local/html/"); 
 
 		//Server Info
 		define ( 'DB_SERVER', 'localhost');

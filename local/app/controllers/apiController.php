@@ -25,7 +25,29 @@
 		}
 
 
-		
+		public function edit(){
+
+			$pk = escape_value($_POST['pk']);
+			$value = escape_value($_POST['value']);
+			
+			$parts = explode( '-', $pk );
+			$tablename =escape_value($parts[0]);
+			$fieldname = escape_value($parts[1]);
+			$id = escape_value($parts[2]);
+			//if not by ID, something else
+			if (empty($parts[3])) {
+				$by = 'id';			
+			} else {
+				$by = escape_value($parts[3]);
+			}
+
+			$vars = array(); //arrayModificacion
+			$vars[$fieldname] = $value;
+				
+			$insert = DB::update( DB_PREFIX . $tablename, $vars, $by."=%s", $id);	
+
+			return $insert;
+		}
 		
 	}
 ?>

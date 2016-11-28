@@ -451,26 +451,7 @@
 		}
 		
 		
-		function editinline () {
-			
-			$pk = escape_value($_POST['pk']);
-			$value = escape_value($_POST['value']);
-			
-			$parts = explode( '-', $pk );
-			$tablename = $parts[0];
-			$fieldname = $parts[1];
-			$id = $parts[2];
-			
-			$arrayModificacion = array();
-									
-			$arrayModificacion[$fieldname] = $value;
-			
-			$insert = $this->helper->update($tablename, $id, $arrayModificacion);
-			
-			print_r($insert);
-			
-			
-		}
+		
 		
 		//Opciones declarada y aprobada
 		function formapago_options() {
@@ -482,29 +463,6 @@
 		
 			echo json_encode($groups); 
 			
-		}
-		
-		function providers() {
-			
-			$this->loadModel('entidades');
-			$groups = entidadesModel::$this->model->listProveedores_json();
-			
-			echo json_encode($groups); 	
-		}
-		function providers_texttext() {
-			
-			$this->loadModel('entidades');
-			$groups = entidadesModel::$this->model->listProveedores_json('text');
-			
-			echo json_encode($groups); 
-		}
-
-		function clients() {
-			
-			$this->loadModel('entidades');
-			$groups = entidadesModel::$this->model->listClientes_json();
-			
-			echo json_encode($groups); 	
 		}
 		
 		

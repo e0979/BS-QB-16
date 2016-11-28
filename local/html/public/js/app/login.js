@@ -38,7 +38,7 @@ define(['globals'], function(globals) {
 
 					},
 					error : function(obj, errorText, exception) {
-						console.log(errorText);
+						console.log(obj);
 
 					}
 				});

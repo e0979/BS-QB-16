@@ -1,11 +1,20 @@
 define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Functions, Handlebars) {
 
 	function enhance(controller) {
+		console.log(controller);
 		
-		$('.modalbox').on('shown.bs.modal', function (e) {
+		/*$('.modalbox')
+	    .on('show.bs.modal', function() {
+
+	        alert('shown baby!');
+
+	    }).modal('show');
+	    */
+		$('.maodalbox').on('shown.bs.modal', function () {
 			//$("select").select2('data', {});
 			//$("select").select2();
 			console.log("@");
+			$(".chosen-select").select2( { placeholder: 'Seleccione...', width: '100%' });
 			$('#razon_social-input').removeAttr('disabled');
 			$("[name='rif']").removeAttr('disabled');
 			$("[name='direccion']").removeAttr('disabled');

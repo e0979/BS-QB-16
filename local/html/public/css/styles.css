@@ -7,8 +7,7 @@ body {
   height: 100%;
   font-family: "Lato", sans-serif;
   font-size: 1.6em;
-  text-align:center;
-  
+  text-align:center;  
   color: #34495e;
 }
 * { margin: 0; padding: 0; }
@@ -213,3 +212,4 @@ background-size: 100% 30px;
 #printable-area .table-bordered td, #printable-area .table-bordered th { border: 2px solid #000; }
 
 #add-egreso .select2-container .select2-choice { margin-top: 0.2em; }
+.format_texts { display: none; }

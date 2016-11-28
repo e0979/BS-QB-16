@@ -1,7 +1,7 @@
 <?php
 	//Main anti XSS function
 	function escape_value($data) {
-		if (ini_get('magic_quotes_gpc')) {
+		/*if (ini_get('magic_quotes_gpc')) {
 			$data = stripslashes($data);
 		}
 		$data = strip_tags($data, '<p><a><br>');
@@ -9,6 +9,8 @@
 		return mysql_real_escape_string($data);
 		//use this for server
 		//return mysql_escape_string($data); 
+		*/
+		return $data;
 	}
 	
 	function create_slug($data) {

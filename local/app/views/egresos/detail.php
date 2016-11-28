@@ -1,7 +1,7 @@
 <script id="Egreso-Comprobante-Template" type="text/x-handlebars-template">
 	{{#if egresos_comprobantes.length}}
 		{{#egresos_comprobantes}}
-		<table class="table table-condensed">
+		<table class="table table-condensed table-responsive">
 		  <tbody>
 		    <tr>
 		      <td class="text-right format_texts">Formulario F­ADM001 | Lenar a Mano o Máquina | Creación 01/05/07 | Ultima Modificación 10/02/14</td>

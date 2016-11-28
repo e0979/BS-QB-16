@@ -23,7 +23,10 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 		});
 		//Edit
 		$(".comprobantes").on('click', 'button.edit', function () {
-			console.log($(this).data('element'));
+			var data = $(this).data('element');
+			var elementIs = data.split('-')[0];
+			var id = data.split('-')[1];
+			edit(elementIs, id);
 		});
 
 	}
@@ -44,6 +47,12 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 	        ],
 	        columnDefs: [
 	        	
+	        	{ "targets" : 3, 
+	        	  "render" : 
+	        	  	function (data){
+			        	return Functions.moneyFormat(data);
+					}
+				},
 	        	{ "targets" : 5, 
 	        	  "render" : 
 	        	  	function (data){
@@ -76,6 +85,19 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 
 	function add(what, id){
 
+	}
+
+	function edit(what, id){
+		view(what, id);
+		
+		$('.modalbox').on('shown.bs.modal', function () {
+			$('.editable').editable({
+				url: URL+"api/edit/",
+			    success: function(response, newValue) {
+			    console.log(response);			       
+			 	}
+			});
+		});
 	}
 
 	function view(what,id){

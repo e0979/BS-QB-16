@@ -102,6 +102,15 @@ define(['globals','assets/handlebars.min',], function(globals, Handlebars) {
 		dateStr = removeTime[0] + "/" + dateArr[1] + "/" + dateArr[0];
 		return dateStr;
 	}
+
+	function moneyFormat(data, decimal = 2, simb = 'Bs. ') {
+		var data  = parseFloat(data);
+		var Money = data
+	       .toFixed(2) // always two decimal digits
+	       .replace(".", ",") // replace decimal point character with ,
+	       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+	      return simb+Money;	
+	}
 	//Definition for mask
 
 	function initForm() {
@@ -134,6 +143,7 @@ define(['globals','assets/handlebars.min',], function(globals, Handlebars) {
       pad: 			pad,
       getOnlyDate: 	getOnlyDate,
       initForm: 	initForm,
+      moneyFormat: 	moneyFormat,
       handlebarsHelpers: handlebarsHelpers
 
 	}

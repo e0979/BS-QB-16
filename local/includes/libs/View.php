@@ -10,7 +10,7 @@ class View {
         require '../app/views/' . $name . '.php';    
     }
 	
-	 public function insert($filename)    {
+	public function insert($filename)    {
         echo  '<img src="private/'.$filename.'" class="img-responsive" /> '; 
     }
 	

@@ -1,5 +1,5 @@
 <?php 
-	 /**
+	/**
 	 * AccountController handles:
 	 * - Creating users accounts
 	 * - Login & Sign Up
@@ -9,18 +9,17 @@
 	class accountController extends Controller {
 
 		public function __construct() {
-			
 			parent::__construct();	
 		}
-
+		
 		public function index() {
 							
 			$this->signin();		
 		}
-
 		// LOGIN: Method called by login form, process the form and returns authorization response from server
+		
 		public function login() {
-				
+
 			$array_datos = array();	
 			foreach ($_POST as $key => $value) {
 				$campo = escape_value($key);
@@ -29,7 +28,6 @@
 				$data = "\$" . $campo . "='" . escape_value($valor) . "';";						
 				eval($data);
 			}
-			
 			$username = $username;
 			$validUser = $this->user->validateUsername($username);
 			
@@ -52,7 +50,6 @@
 					$response["error"] = 1;	
 		            $response["response"] = LOGIN_MESSAGE_ERROR;	
 					echo json_encode($response);
-					
 				} else {
 					$role = escape_value($validUser[0]['role']);
 					$username = escape_value($validUser[0]['username']);
@@ -84,14 +81,9 @@
 									
 					exit;
 				}
-			}		
-				
+			}
 		}
-	}
-
-	/*class accountController extends Controller {
-		
-		
+		/*
 		// SIGNIN: verifies if User already logged in, if not shows login screen
 		public function signin() {
 			
@@ -107,12 +99,6 @@
 				$this->identify();
 			}
 		}
-		
-		
-		
-		
-		
-		
 		// AUTHENTICATE: Method called when user is verified via Email -after registration-, and is logging in for the first time	
 		public function authenticate($temp_password, $username) {
 			
@@ -627,11 +613,9 @@
 					}
 					
 					break;
-			}			
-				
-				
-				
+			}		
 		
-		}	
-	}*/
+		}
+		*/
+	}
 ?>

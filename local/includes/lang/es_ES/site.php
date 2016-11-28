@@ -3,6 +3,9 @@
 define ('SITE__LOG_IN','Iniciar Sesión');
 define ('SITE__SIGN_IN','Registrarme');
 
+define ('CONTACT_PHONENUMBER','02418251078');
+
+
 define('LOGIN_MESSAGE_ERROR', 'Usuario o Contraseña inválido');
 
 define('REGISTRATION_MESSAGE_ERROR', '<div class="alert-response"><h1>):</h1><h2>¡Lo sentimos!</h2><h4>Ha ocurrido un error con tu registro, por favor contactanos al '.CONTACT_PHONENUMBER.'</h4></div>');
