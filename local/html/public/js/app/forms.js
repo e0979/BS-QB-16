@@ -1,28 +1,22 @@
 define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Functions, Handlebars) {
 
 	function enhance(controller) {
-		console.log(controller);
-		
-		/*$('.modalbox')
-	    .on('show.bs.modal', function() {
 
-	        alert('shown baby!');
+		//console.log("enhance "+controller);
+				
+		$('.modalbox').on('shown.bs.modal', function (e) {
+			$(".modalbox.in .chosen-select").select2( { placeholder: 'Seleccione...', width: '100%' });
+			$(".modalbox.in [name='banco']").select2( { placeholder: 'Banco', width: '48%' });
+			$(".modalbox.in [name='forma_pago']").select2( { placeholder: 'Forma de pago', width: '48%' });
+			
 
-	    }).modal('show');
-	    */
-		$('.maodalbox').on('shown.bs.modal', function () {
-			//$("select").select2('data', {});
-			//$("select").select2();
-			console.log("@");
-			$(".chosen-select").select2( { placeholder: 'Seleccione...', width: '100%' });
 			$('#razon_social-input').removeAttr('disabled');
 			$("[name='rif']").removeAttr('disabled');
 			$("[name='direccion']").removeAttr('disabled');
-			$("[name='telefono']").removeAttr('disabled');					
-		});
-				
+			$("[name='telefono']").removeAttr('disabled');	
+
+		});		
 		/* Form enhancement */
-		//$(".chosen-select").select2( { placeholder: 'Seleccione...', width: '100%' });	
 		$('.datepicker').datepicker({});	
 		$("[name='telefono']").mask("(0999) 999.99.99");
 		$("[name='rif']").mask("*-99999999-9");
@@ -34,6 +28,7 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 			$("[name='direccion']").attr('disabled', 'disabled');
 			$("[name='telefono']").attr('disabled', 'disabled');			
 		});
+
 	}
 	
 	return {

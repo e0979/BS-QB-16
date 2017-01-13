@@ -3,7 +3,7 @@
 	
 	<div class="head head-egresos text-left">
 		<h3><?php echo $this->h3; ?></h3>
-		<ul class="nav nav-pills right">	
+		<ul class=" nav nav-pills right">	
 			<?php $this->render($this->navpills); ?>
 		</ul>	
 	</div>

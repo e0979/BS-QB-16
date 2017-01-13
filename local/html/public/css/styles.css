@@ -168,15 +168,15 @@ background: url(../../public/img/agendabg.jpg);
   padding: 24px 55px 27px;
   margin-bottom: 20px;
   min-height:300px;
-position: relative;
-background: white;
-background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
-background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
-background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
--webkit-background-size: 100% 30px;
--moz-background-size: 100% 30px;
--ms-background-size: 100% 30px;
-background-size: 100% 30px;
+  position: relative;
+  background: white;
+  background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+  background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+  background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+  -webkit-background-size: 100% 30px;
+  -moz-background-size: 100% 30px;
+  -ms-background-size: 100% 30px;
+  background-size: 100% 30px;
 
   -webkit-box-shadow: 0 5px 10px #000 , -15px 15px 15px rgba(0, 0, 0, 0.3) , 0 0 50px 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 5px 10px #000 , -15px 15px 15px rgba(0, 0, 0, 0.3) , 0 0 50px 10px rgba(0, 0, 0, 0.5);
@@ -194,10 +194,11 @@ background-size: 100% 30px;
 .seccion h1 { font-weight:100; font-size:5em; margin:-0.6em auto 1em auto; color: #EEE; text-shadow: 0 -0.015em 0.02em rgba(0,0,0,0.6); 
 }
 .seccion h2 { font-size: 2em; padding:0.5em; color:#FFF; text-shadow: 0 0.4em 0.2em rgba(0,0,0,0.2)  }
-.seccion h3 { font-weight:100; font-size: 2em; padding:0 0.5em 0.2em; margin-top: 0 }
+.seccion h3, .modalhead h3 { font-weight:100; font-size: 2em; padding:0 0.5em 0.2em; margin-top: 0; 
+  width:92%; float: left; }
 
 /* TABLAS  *******************************************************************/
-
+.nopadding { padding-left: 0; padding-right: 0 }
 .head-egresos       { background: #E74C3C; color: #FFF; }
 .head-facturas      { background: #2ECC71; color: #FFF; }
 .head-impuestos     { background: #D35400; color: #FFF; }
@@ -207,9 +208,22 @@ background-size: 100% 30px;
 .box { background:#FFF; border-radius:0.5em; border-top-right-radius:0; 
   border-top-left-radius:0; height:auto; padding:2em; }
 
+/* MODALS  *******************************************************************/
+.format_texts { display: none; }
+.fullinput { width: 100%; text-align: center; }
+
+.info { clear: both; padding: 0.3em; }
+.separador { height: 1px; background: #CCC; border-bottom: 1px solid #EEE; width: 100%; clear: both; margin: 1em 0 2em 0; }
+.close { font-size: 30px; opacity: 0.7; margin-right: 10px; }
+
 /* EGRESOS Modals  *******************************************************************/
 
 #printable-area .table-bordered td, #printable-area .table-bordered th { border: 2px solid #000; }
-
 #add-egreso .select2-container .select2-choice { margin-top: 0.2em; }
-.format_texts { display: none; }
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]
+{ margin: 0.3em; box-shadow:none; }
+.chosen-select { margin-right: 5px }
+
+@media screen and (min-width: 768px) {
+  .modal-dialog { width: 700px }
+}

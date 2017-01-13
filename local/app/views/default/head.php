@@ -23,7 +23,7 @@
 
 	<?php echo GOOGLE_FONTS; ?>
 	<?php echo GOOGLE_ANALYTICS; ?>
-
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="<?php echo JS; ?>config.js"></script>
     <script data-main="<?php echo JS;?>main-site" src="<?php echo JS; ?>assets/require.js"></script>
 	

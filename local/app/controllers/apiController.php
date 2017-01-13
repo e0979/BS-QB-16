@@ -48,6 +48,20 @@
 
 			return $insert;
 		}
+
+		public function check ($what, $param = "") {
+			
+			$value = escape_value($_POST['rif']);			
+			$response = ApiQuery::get($what, $param, $value);
+			
+			if (empty($response)) {				
+			    echo 'true';
+			}
+			else {
+			    echo 'false';
+			}			
+
+		}
 		
 	}
 ?>

@@ -65,10 +65,13 @@ define(['globals', 'functions', 'assets/handlebars.min'], function(globals, Func
 			$.getJSON(globals.URL+"api/get/json/"+elementIs, function(data) {
 				var TemplateScript = $(elementTemplate).html(); 
 			    var Template = Handlebars.compile(TemplateScript);
-		    $("select#razon_social-select").html(Template(data)); 
+		    $("select[name='"+elementIs+"']").html(Template(data)); 
+		    //$("select#razon_social-select").html(Template(data)); 
+		   // console.log(data);
 		}, function () {
 		    
 		})).done( function(){
+
 			//$("#egreso-view").modal('show');
 		});
 	}

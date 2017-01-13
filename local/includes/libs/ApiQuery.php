@@ -65,7 +65,7 @@
 				$limit = "LIMIT 1";
 				$where = "WHERE $what.$param=$id";
 			}
-			//DB::debugMode(TRUE);
+			
 			if ($what == 'egresos_comprobantes'){
 				
 				return DB::query("SELECT proveedor.razon_social, 
@@ -76,18 +76,25 @@
 				
 
 			} else {
-
 				if ($param == "") {				
 					// Get ALL
 					return DB::query("SELECT * FROM " . DB_PREFIX . "$what ");
 				} else {
-					// Get By A Parameter
-					return DB::query("SELECT * FROM " . DB_PREFIX . "$what WHERE $param=%i $limit", $id);				
+					if (is_numeric($id)) {
+						// Get By A Parameter
+						return DB::query("SELECT * FROM " . DB_PREFIX . "$what WHERE $param=%i $limit", $id);
+					} else {
+						// Get By A Parameter
+						return DB::query("SELECT * FROM " . DB_PREFIX . "$what WHERE $param=%s $limit", $id);
+					}
+									
 				}
 			}
 
 
 		}
+
+		
 
 
 		

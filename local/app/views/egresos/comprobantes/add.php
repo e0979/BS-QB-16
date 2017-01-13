@@ -7,36 +7,45 @@
 					&times;
 				</button>
 			</div>
-			<div class="modal-body">
-				<form id="add-egreso" action="" method="post" data-element="egreso-proveedor">
-					<div class="grid_9" style="margin: 0 12%; text-align: center">
+			<form id="add-egreso-form" action="" method="post" data-element="egreso-proveedor">
+				<div class="modal-body">
+					<div class="text-center" style="margin: 0 12%;">
 						<?php $this -> render('entidades/proveedor/select'); ?>
+						<br>
 						<div class="info">...ó si el Proveedor no está registrado, 
 							<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#add-proveedor-ficha"><i class="glyphicon glyphicon-book"></i> Registrar
 							</button> 
 						</div>
 						<div id="add-proveedor-ficha" class="collapse">
-							<?php //$this -> render('entidades/proveedores/add'); ?>
+							<?php $this -> render('entidades/proveedor/add'); ?>
 						</div>
+
+					
+
+
 						<div class="separador"></div>
 						<div class="info">¿Incluir Retencion de ISLR para el proveedor? 
 									<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#add-retencion-ficha">
 										<i class="glyphicon glyphicon-plus-sign"></i> Crear Retención</button> 
 									</div>
 									<div id="add-retencion-ficha" class="collapse">
-										<?php //$this -> render('impuestos/islr/crear'); ?>
+										<?php $this -> render('impuestos/islr/add'); ?>
 
 									</div>
 									<div class="clear"></div>
 
 									<input class="left fullinput" type="text" name="concepto" placeholder="Concepto del Egreso" required="required" />
 
-									<select class="nosearch" data-placeholder="Forma de Pago...." name="forma_pago" id="forma_pago" required>
+									<select class="nosearch chosen-select form" data-placeholder="Forma de Pago...." name="forma_pago" id="forma_pago" required>
 										<option value=""></option>
 										<option value="Efectivo">Efectivo</option>
 										<option value="Cheque" selected="selected">Cheque</option>
 										<option value="Transferencia">Transferencia</option>
 									</select>
+
+									<?php $this -> render('entidades/banco/select'); ?>
+
+						            
 
 									<input id="fecha" name="fecha" class="datepicker mediuminput left" data-date-format="dd/mm/yyyy" placeholder="Fecha">
 									<input class="left money mediuminput" type="text" name="monto" placeholder="Monto Bs" required="required" />
@@ -52,10 +61,10 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							Cancelar
 						</button>
-						<button type="submit" name="submit"class="btn btn-success">Agregar</button>
+						<button type="submit" name="submit" class="send btn btn-success">Agregar</button>
 					</div>
-				</form>
-			</div> <!--end modal-body -->
+				</div> <!--end modal-body -->
+			</form>
 		</div>
 	</div>
 </div>

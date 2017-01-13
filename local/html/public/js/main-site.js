@@ -16,7 +16,7 @@ require.config({
             exports: '$'
           },
           'assets/all': ['jquery'],
-          'assets/bootstrap.min' : ['jquery'],
+          'assets/bootstrap.min' : ['jquery',],
           'assets/jquery.validate.min': ['jquery'],
           'assets/jquery.easing.min': ['jquery'],   
           'assets/jquery.scrollTo.min': ['jquery'], 
@@ -30,7 +30,7 @@ require.config({
           'app/site': ['jquery','functions', 'globals','app/login'],
           'app/login': ['jquery','functions', 'globals','assets/jquery.validate.min'],
           'app/forms': ['jquery', 'functions', 'globals', 'assets/bootstrap.min', 'assets/bootstrap-editable.min', 'assets/jquery.validate.min', 'assets/select2.min', 'assets/jquery.maskedinput.min'],
-          'app/egresos': ['jquery', 'functions', 'globals','assets/jquery.dataTables.min','app/forms'],
+          'app/egresos': ['jquery', 'functions', 'globals','assets/jquery.validate.min', 'assets/jquery.dataTables.min','app/forms'],
           'app/dashboard': ['jquery','functions', 'globals','assets/jquery.validate.min', 'assets/select2.min'],
           'app/hashchange': ['jquery', 'globals', 'app/site', 'app/login', 'app/dashboard', 'app/forms'],
 

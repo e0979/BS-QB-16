@@ -3,16 +3,19 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 	function run() {
 
 		loadTableData('comprobantes');
-		//temp
-		//$('#add-egreso').modal('show');
 
+		Forms.enhance('egresos'); //TODO enhance aca? o hacer que automaticamente se haga con los modal?
 		$('#add-egreso').on('shown.bs.modal', function (e) {
 		  Dashboard.loadDataSelect('proveedor');
-		  Forms.enhance('egresos'); //TODO enhance aca? o hacer que automaticamente se haga con los modal?
+		  Dashboard.loadDataSelect('banco');
+		  add();	  
 		});
+		
+		//temp
+		$('#add-egreso').modal('show');
 
 	}
-
+	
 	function activeButtons(){
 		//View
 		$(".comprobantes").on('click', 'button.view', function () {
@@ -83,10 +86,6 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 		activeButtons();
 	}
 
-	function add(what, id){
-
-	}
-
 	function edit(what, id){
 		view(what, id);
 		
@@ -133,49 +132,50 @@ define(['globals', 'functions', 'assets/handlebars.min', 'assets/jquery.dataTabl
 		*/
 	}
 
+	
 	function add(){
-		var add_egreso_prov = '#addegreso-proveedor';
-				$(add_egreso_prov).validate({				
-					rules: {
-					   rif:{
-		                	"rif": true,
-			                remote: {
-		                    	url: urlCheck+'entidades/check/proveedor',
-		                    	type: 'post',
-		                    }
-		               },
-		               base_imponible: "bsformat",
-					   alicuota: "number",					   
-					},
-					messages: {
-		                rif: {
-		                    remote:jQuery.format("\"{0}\" ya está registrado, revise la lista")
-		                },		                
-		            },				
-					submitHandler: function(form) {
-						$.ajax({
-						  type: "POST",
-						  url: URL+"egresos/add/egreso/proveedor",
-						  data: $(form).serialize(),
-						  timeout: 5000,
-						  success: function(response) {
-						  	console.log(response);
-							 	$(add_egreso_prov).closest('form').find("input, textarea").val("");
-								$(add_egreso_prov).closest('form').find("select").select2('data', null);								
-								
-							 	$('#add-egreso-proveedor').modal('hide');
-							 	//Create then show 								 	
-							 	view('comprobantes',response);							   	
-						  },
-						  error: function(response) {
-							  console.log(response);
-							  $(add_egreso_prov).animate({opacity: 0, left: "-=300", }, 800);
-							  $('#failed').bPopup({ modal: false });
-						  }
-						});
-						return false;
-					}
+
+		$('#add-egreso-form').validate({			
+			rules: {
+			   rif:{
+                	"rif": true,
+	                remote: {
+                    	url: globals.URL+'api/check/proveedor/rif/',
+                    	type: 'post',
+                    }
+               },
+               base_imponible: "bsformat",
+			   alicuota: "number",					   
+			},
+			messages: {
+                rif: {
+                    remote:jQuery.format("\"{0}\" ya está registrado, revise la lista")
+                },		                
+            },				
+			submitHandler: function(form) {
+				$.ajax({
+				  type: "POST",
+				  url: globals.URL+"egresos/add/egreso/proveedor",
+				  data: $(form).serialize(),
+				  timeout: 5000,
+				  success: function(response) {
+				  	console.log(response);
+					 	$(add_egreso_prov).closest('form').find("input, textarea").val("");
+						$(add_egreso_prov).closest('form').find("select").select2('data', null);								
+						
+					 	$('#add-egreso-proveedor').modal('hide');
+					 	//Create then show 								 	
+					 	view('comprobantes',response);							   	
+				  },
+				  error: function(response) {
+					  console.log(response);
+					  $(add_egreso_prov).animate({opacity: 0, left: "-=300", }, 800);
+					  $('#failed').bPopup({ modal: false });
+				  }
 				});
+				return false;
+			}
+		});
 	}
 
 	return {
